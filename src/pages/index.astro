@@ -3,74 +3,66 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import FeatureGrid from '../components/FeatureGrid.astro';
-import StatsBar from '../components/StatsBar.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Footer from '../components/Footer.astro';
 
-// TODO: Replace with brand-specific feature content
 const features = [
-  {
-    title: 'Feature One',
-    description: 'TODO: Describe your first key feature or service offering. Focus on the benefit to the customer.',
-    icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-  },
-  {
-    title: 'Feature Two',
-    description: 'TODO: Describe your second key feature or service offering. Focus on the benefit to the customer.',
-    icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-  },
-  {
-    title: 'Feature Three',
-    description: 'TODO: Describe your third key feature or service offering. Focus on the benefit to the customer.',
-    icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" /></svg>',
-  },
-  {
-    title: 'Feature Four',
-    description: 'TODO: Describe your fourth key feature or service offering. Focus on the benefit to the customer.',
-    icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-  },
-];
-
-const stats = [
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '10+', label: 'Years Experience' },
-  { value: '99%', label: 'Client Satisfaction' },
-  { value: '24/7', label: 'Support' },
+  { title: 'Adaptiv Diagnostikk', description: '7 sporsmal per emne avslorer noyaktig ditt niva. Ikke gjetting, ikke generell start pa "niva 1". Du starter der du trenger det.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4M12 8h.01" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: '5-Fase Laeringsokt', description: 'Oppvarming, teori, veiledet oving, repetisjon og oppsummering. Strukturert progresjon som bygger trygghet for utfordring.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: 'AI-Mentor (Sokratisk)', description: 'Nar du star fast, stiller AI-mentoren ledende sporsmal i stedet for a gi svaret. Du laerer a tenke, ikke bare a kopiere.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: 'Mikrosteg-Scaffolding', description: 'Vanskelige oppgaver brytes ned i 3-7 sma steg. Det som foltes umulig blir overkommelig, ett steg om gangen.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: '543+ Oppgaver for 2P', description: 'Alle oppgaver er tilpasset Matematikk 2P kompetansemal fra Udir. Ovingen forbereder deg direkte til eksamen.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: 'Fremgangsanalyse', description: 'Se mestring pa tvers av alle emner. Spor forbedringen din over tid. Vet at du faktisk blir bedre.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
 ];
 ---
-
-<BaseLayout
-  title="Home | Brand"
-  description="TODO: Write your homepage meta description. Keep it under 160 characters and include your primary keyword."
->
+<BaseLayout title="Logicmath: Adaptiv Matte for Norske Elever" description="Finn ut noyaktig hvor du star i Matematikk 2P. AI-veiledet oving tilpasset ditt niva. 543+ oppgaver bygget for norsk laereplan.">
   <Header />
+  <main id="main-content">
+    <Hero headline="Du er ikke darlig i matte. Du har hull." subheadline="Logicmath finner hullene med en 7-sporsmals diagnostikk, bygger en personlig ovingsplan, og gir deg en AI-mentor som hjelper deg forsta, ikke bare fa svaret." ctaText="Last Ned Logicmath" ctaHref="/last-ned" secondaryCtaText="Se hvordan det fungerer" secondaryCtaHref="/hvordan-det-fungerer" variant="dark" />
 
-  <main>
-    <Hero
-      headline="We build products that solve real problems"
-      subheadline="TODO: Your value proposition here"
-      ctaText="See Our Work"
-      ctaHref="/portfolio"
-      secondaryCtaText="How We Work"
-      secondaryCtaHref="/process"
-      variant="dark"
-    />
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <h2 class="font-heading text-3xl font-bold text-primary-900 dark:text-white">Du stryker ikke fordi du er dum. Du stryker fordi hull fra tidligere ar gjor nye emner umulige.</h2>
+      </div>
+      <div class="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2">
+        <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Vet ikke hva som mangler</h3>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Du vet at du sliter med matte, men du vet ikke noyaktig hvilke emner eller konsepter som er problemet. Du over pa alt, men ingenting hjelper.</p>
+        </div>
+        <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Star fast uten hjelp</h3>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Nar du star fast pa en oppgave, finnes det ingen hjelp. Laereren har gatt videre. Boka forklarer ikke pa en annen mate. Du gir opp.</p>
+        </div>
+        <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Ovingene passer ikke</h3>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Oppgavene i boka er enten for lette eller for vanskelige. Du enten kjeder deg eller blir frustrert. Ingen tilpasning til ditt niva.</p>
+        </div>
+        <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Privatlaerer er for dyrt</h3>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">En privatlaerer koster 400-800 kr per time. Det er ikke et alternativ for alle familier, selv om det er det som fungerer best.</p>
+        </div>
+      </div>
+    </section>
 
-    <FeatureGrid
-      sectionTitle="What We Do"
-      sectionSubtitle="TODO: Brief summary of your core offerings"
-      features={features}
-    />
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center"><h2 class="font-heading text-3xl font-bold text-primary-900 dark:text-white">Slik fungerer det</h2><p class="mt-2 text-primary-600 dark:text-primary-400">Diagnostikk forst. Tilpasset oving. AI-veiledning nar du star fast.</p></div>
+      <div class="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-3">
+        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">1</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Ta diagnostikken</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">7 sporsmal per emne avslorer noyaktig ditt niva og kunnskapshull. Ingen gjetting. Du vet noyaktig hvor du star pa under 5 minutter.</p></div>
+        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">2</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Folg din sti</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Appen bygger en personlig laeringsokt: oppvarming, teori, veiledet oving og repetisjon. Alt pa ditt niva. AI-mentoren er der nar du star fast.</p></div>
+        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">3</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Se fremgangen din</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Spor mestring pa tvers av alle emner. Se forbedringen over tid. Appen tilpasser seg etter hvert som du vokser.</p></div>
+      </div>
+    </section>
 
-    <StatsBar stats={stats} />
+    <FeatureGrid sectionTitle="Slik fungerer det" sectionSubtitle="Diagnostikk forst. Tilpasset oving. AI-veiledning nar du star fast." features={features} />
 
-    <CTABanner
-      headline="Ready to get started?"
-      ctaText="Get in Touch"
-      ctaHref="/contact"
-      variant="accent"
-    />
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <p class="text-sm text-primary-500 dark:text-primary-400">543+ oppgaver. Tilpasset Matematikk 2P. AI-mentor som veileder, ikke gir svaret.</p>
+        <p class="mt-2 text-sm text-primary-500 dark:text-primary-400">Gratis diagnostikk for forste emne. Se hvor du faktisk star for du bestemmer deg.</p>
+      </div>
+    </section>
+
+    <CTABanner headline="Barnet ditt er ikke darlig i matte. Det har hull ingen har funnet for." ctaText="Last Ned Logicmath" ctaHref="/last-ned" variant="accent" />
   </main>
-
   <Footer />
 </BaseLayout>

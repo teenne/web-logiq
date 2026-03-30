@@ -4,48 +4,32 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Primary palette — neutral gray scale for main UI */
-  --color-primary-50: #f8f9fa;
-  --color-primary-100: #f1f3f5;
-  --color-primary-200: #e9ecef;
-  --color-primary-300: #dee2e6;
-  --color-primary-400: #ced4da;
-  --color-primary-500: #adb5bd;
-  --color-primary-600: #868e96;
-  --color-primary-700: #495057;
-  --color-primary-800: #343a40;
-  --color-primary-900: #212529;
-  --color-primary-950: #16191c;
+  --color-primary-50: #f0fdfa;
+  --color-primary-100: #ccfbf1;
+  --color-primary-200: #99f6e4;
+  --color-primary-300: #5eead4;
+  --color-primary-400: #2dd4bf;
+  --color-primary-500: #14b8a6;
+  --color-primary-600: #0d9488;
+  --color-primary-700: #0f766e;
+  --color-primary-800: #115e59;
+  --color-primary-900: #134e4a;
+  --color-primary-950: #042f2e;
 
-  /* Accent palette — CTAs, links, highlights */
-  --color-accent-400: #38bdf8;
-  --color-accent-500: #0ea5e9;
-  --color-accent-600: #0284c7;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #d97706;
+  --color-accent-600: #b45309;
 
-  /* Dark mode palette */
-  --color-dark-bg: #111827;
-  --color-dark-surface: #1f2937;
-  --color-dark-border: #374151;
+  --color-dark-bg: #1C1917;
+  --color-dark-surface: #292524;
+  --color-dark-border: #44403c;
 
-  /* Fonts — update to match your brand */
-  --font-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Plus Jakarta Sans', 'Open Sans', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply font-sans text-gray-800 antialiased dark:bg-dark-bg dark:text-gray-200;
-  }
-
-  *:focus-visible {
-    @apply outline-2 outline-offset-2 outline-accent-500;
-  }
-
-  *:focus-visible {
-    @apply outline-2 outline-offset-2 outline-accent-500;
-  }
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans text-gray-800 antialiased dark:bg-dark-bg dark:text-gray-200; }
+  *:focus-visible { @apply outline-2 outline-offset-2 outline-accent-500; }
 }

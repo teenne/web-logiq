@@ -3,35 +3,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
-
-<BaseLayout
-  title="Terms & Conditions | Brand"
-  description="Read our terms and conditions."
->
+<BaseLayout title="Brukervilkar | Logicmath" description="Les Logicmaths brukervilkar.">
   <Header />
-  <main>
+  <main id="main-content">
     <section class="px-4 py-16 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-3xl">
-        <h1 class="font-heading text-4xl font-bold text-primary-900">Terms &amp; Conditions</h1>
-        <p class="mt-4 text-sm text-primary-500">Last updated: January 1, 2025</p>
-        <div class="prose prose-primary mt-8 max-w-none">
-          <h2>1. Agreement to Terms</h2>
-          <p>TODO: Write your terms and conditions. By accessing this website, you agree to be bound by these terms of service.</p>
-
-          <h2>2. Use License</h2>
-          <p>TODO: Describe permitted use of your website and services.</p>
-
-          <h2>3. Disclaimer</h2>
-          <p>TODO: Add your disclaimer information.</p>
-
-          <h2>4. Limitations</h2>
-          <p>TODO: Describe limitations of liability.</p>
-
-          <h2>5. Revisions</h2>
-          <p>TODO: Describe how terms may be revised.</p>
-
-          <h2>6. Governing Law</h2>
-          <p>TODO: Specify applicable jurisdiction and governing law.</p>
+        <h1 class="font-heading text-4xl font-bold text-primary-900 dark:text-white">Brukervilkar</h1>
+        <p class="mt-4 text-sm text-primary-500">Gyldig fra: 26. mars 2026</p>
+        <div class="prose prose-primary mt-8 max-w-none dark:prose-invert">
+          <h2>1. Tjenestebeskrivelse</h2><p>Logicmath er en adaptiv mattelaeringsapp for norske videregaaendeelever (Matematikk 2P) med AI-veiledet oving og diagnostiske tester.</p>
+          <h2>2. Pedagogisk forbehold</h2><p>Logicmath supplerer klasseromsundervisning. Den erstatter ikke laerere, privatlaerere eller formell utdanning. Vi garanterer ikke spesifikke karakterforbedringer.</p>
+          <h2>3. AI-mentor</h2><p>AI-mentoren veileder forstaelse gjennom sokratisk metode. Den loser ikke oppgaver for elevene eller gir svar direkte.</p>
+          <h2>4. Alderskrav</h2><p>Logicmath er designet for elever 16-18 aar. Elever under 16 boer ha foreldrenes samtykke.</p>
+          <h2>5. Gratis/betalt modell</h2><p>Priser er ikke fastsatt. Eventuelle betalte funksjoner vil bli tydelig kommunisert foer kjop.</p>
+          <h2>6. Gjeldende lov</h2><p>Norsk lov. Oslo tingrett.</p>
         </div>
       </div>
     </section>
