@@ -191,13 +191,35 @@ const fagNavn: Record<string, string> = {
       });
     });
 
-    pdForm.addEventListener('submit', (e: Event) => {
+    pdForm.addEventListener('submit', async (e: Event) => {
       e.preventDefault();
       const emailInput = document.getElementById('pd-email') as HTMLInputElement;
       const email = emailInput?.value.trim();
       if (!email) return;
 
-      // Track waitlist signup with full context
+      const submitBtn = pdForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sender...'; }
+
+      // Send to Web3Forms (same account as SmartCrowding)
+      try {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: '7b32eb95-b175-4963-ad8d-710043808679',
+            subject: `Logicmath venteliste: ${subjectName} (${selectedTier})`,
+            email: email,
+            fag: fag,
+            fag_navn: subjectName,
+            plan: selectedTier,
+            pris_nok: selectedPrice,
+          }),
+        });
+      } catch {
+        // Proceed regardless
+      }
+
+      // Track waitlist signup in PostHog
       if (window.posthog) {
         window.posthog.capture('waitlist_signup', {
           subject: fag,
