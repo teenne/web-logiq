@@ -154,6 +154,8 @@ const fagNavn: Record<string, string> = {
     let selectedTier = '';
     let selectedPrice = '';
 
+    const is2P = fag === '2p';
+
     buttons.forEach((btn) => {
       btn.addEventListener('click', () => {
         selectedTier = btn.dataset.tier || '';
@@ -169,6 +171,15 @@ const fagNavn: Record<string, string> = {
           });
         }
 
+        if (is2P) {
+          // 2P: show "coming soon" with download promise, no waitlist
+          pdMessage.textContent = `${subjectName} lanseres snart. Nedlastingen vil bli tilgjengelig her. Legg igjen e-posten din, så sender vi deg en lenke med en gang appen er klar.`;
+        } else {
+          // Other subjects: waitlist
+          const tierLabel = selectedTier === 'gratis' ? 'gratisplanen' : selectedTier === 'maaned' ? 'månedsplanen' : 'årsplanen';
+          pdMessage.textContent = `${subjectName} er under utvikling. Sett deg på ventelisten for ${tierLabel}, så gir vi deg beskjed med en gang det er klart.`;
+        }
+
         // Set hidden form fields
         const tierInput = document.getElementById('pd-tier') as HTMLInputElement;
         const priceInput = document.getElementById('pd-price') as HTMLInputElement;
@@ -177,9 +188,14 @@ const fagNavn: Record<string, string> = {
         if (priceInput) priceInput.value = selectedPrice;
         if (subjectInput) subjectInput.value = fag;
 
-        // Show painted door overlay
-        const tierLabel = selectedTier === 'gratis' ? 'gratisplanen' : selectedTier === 'maaned' ? 'månedsplanen' : 'årsplanen';
-        pdMessage.textContent = `${subjectName} er snart klar. Sett deg på ventelisten for ${tierLabel}, så gir vi deg beskjed med en gang.`;
+        // Update button text based on context
+        const formBtn = pdForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (formBtn) formBtn.textContent = is2P ? 'Send meg nedlastingslenke' : 'Sett meg på ventelisten';
+
+        // Update success message
+        const successText = pdSuccess!.querySelector('p:first-child');
+        if (successText) successText.textContent = is2P ? 'Du får en e-post når appen er klar for nedlasting!' : 'Du er på ventelisten!';
+
         overlay.classList.remove('hidden');
         overlay.classList.add('flex');
         document.body.style.overflow = 'hidden';
@@ -209,7 +225,7 @@ const fagNavn: Record<string, string> = {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             access_key: window.__w3fKey,
-            subject: `Logicmath venteliste: ${subjectName} (${selectedTier})`,
+            subject: fag === '2p' ? `Logicmath nedlasting: ${subjectName} (${selectedTier})` : `Logicmath venteliste: ${subjectName} (${selectedTier})`,
             email: email,
             fag: fag,
             fag_navn: subjectName,
@@ -221,9 +237,10 @@ const fagNavn: Record<string, string> = {
         // Proceed regardless
       }
 
-      // Track waitlist signup in PostHog
+      // Track signup in PostHog
+      const eventName = fag === '2p' ? 'download_signup' : 'waitlist_signup';
       if (window.posthog) {
-        window.posthog.capture('waitlist_signup', {
+        window.posthog.capture(eventName, {
           subject: fag,
           subject_name: subjectName,
           email: email,
