@@ -83,10 +83,19 @@ def connect_sftp(env):
 def deploy():
     env = load_env()
     remote = env["DEPLOY_PATH"]
-    site_url = env.get("PUBLIC_SITE_URL", remote)
 
     print(f"Deploying to {env['DEPLOY_HOST']}:{remote}...")
     client, sftp = connect_sftp(env)
+
+    # Ensure remote directory tree exists
+    parts = remote.strip("/").split("/")
+    for i in range(1, len(parts) + 1):
+        p = "/" + "/".join(parts[:i])
+        try:
+            sftp.stat(p)
+        except FileNotFoundError:
+            print(f"Creating {p}")
+            sftp.mkdir(p)
 
     # Upload assets first to avoid cached 404s from Cloudflare
     astro_local = os.path.join(DIST_DIR, "_astro")
@@ -106,6 +115,7 @@ def deploy():
     sftp.close()
     client.close()
 
+    site_url = env.get("PUBLIC_SITE_URL", "https://logiq.halisonworks.com")
     print(f"\nDone. Site live at:")
     print(f"  {site_url}")
 
