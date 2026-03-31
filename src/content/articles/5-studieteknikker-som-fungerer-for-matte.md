@@ -1,7 +1,7 @@
 ---
 title: "5 studieteknikker som faktisk fungerer for matte"
 description: "De fleste elever øver feil på matte. Her er fem forskningsbaserte teknikker som gir bedre resultater enn å lese teori og gjøre oppgaver på repeat."
-date: 2026-03-31
+date: 2026-02-06
 author: "Halisonworks"
 type: teknikk
 category: studieteknikk

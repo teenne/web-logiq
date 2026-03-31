@@ -1,7 +1,7 @@
 ---
 title: "Slik hjelper du barnet ditt med matte uten å bli læreren"
 description: "De fleste foreldre vil hjelpe, men vet ikke hvordan. Her er hva forskningen sier om foreldreengasjement i matte, og hva du bør gjøre (og ikke gjøre)."
-date: 2026-03-31
+date: 2026-04-02
 author: "Halisonworks"
 type: foreldreressurs
 category: foreldre

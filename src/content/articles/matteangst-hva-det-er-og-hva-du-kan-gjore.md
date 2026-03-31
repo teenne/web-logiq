@@ -1,7 +1,7 @@
 ---
 title: "Matteangst: hva det er og hva du kan gjøre med det"
 description: "Opptil 20 % av befolkningen opplever matteangst. Det handler ikke om evner, men om frykt. Her er hva forskningen sier, og konkrete tiltak som hjelper."
-date: 2026-03-31
+date: 2026-03-16
 author: "Halisonworks"
 type: forskning
 category: forskning

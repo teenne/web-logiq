@@ -1,7 +1,7 @@
 ---
 title: "Nasjonale prøver: hva de faktisk forteller (og ikke forteller)"
 description: "Nasjonale prøver gir nyttig informasjon på systemnivå, men de er ikke designet for å avdekke individuelle kunnskapshull. Her er hva de måler og hva de ikke fanger opp."
-date: 2026-03-31
+date: 2026-03-18
 author: "Halisonworks"
 type: forskning
 category: forskning

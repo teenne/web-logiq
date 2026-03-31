@@ -1,7 +1,7 @@
 ---
 title: "Fra hull til mestring: en 4-ukers plan"
 description: "En konkret plan for å tette kunnskapshull i matte på fire uker. Uke for uke: diagnose, fylle hull, øve på eksamen og repetere."
-date: 2026-03-31
+date: 2026-02-26
 author: "Halisonworks"
 type: teknikk
 category: studieteknikk

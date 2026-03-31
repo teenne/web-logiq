@@ -1,7 +1,7 @@
 ---
 title: "Slik mestrer du funksjoner i 2P"
 description: "Funksjoner er et sentralt tema i 2P-pensumet. Her er en praktisk guide til lineære og kvadratiske funksjoner, graflesing og skjæringspunkter."
-date: 2026-03-31
+date: 2026-04-05
 author: "Halisonworks"
 type: fagguide
 category: fagguide

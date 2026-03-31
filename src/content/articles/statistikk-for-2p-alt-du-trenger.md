@@ -1,7 +1,7 @@
 ---
 title: "Statistikk for 2P: alt du trenger å vite"
 description: "Gjennomsnitt, median, typetall, standardavvik og diagrammer. En komplett guide til statistikkdelen av 2P-pensumet."
-date: 2026-03-31
+date: 2026-04-07
 author: "Halisonworks"
 type: fagguide
 category: fagguide

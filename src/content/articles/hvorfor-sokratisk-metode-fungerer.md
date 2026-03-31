@@ -1,7 +1,7 @@
 ---
 title: "Hvorfor sokratisk metode fungerer bedre enn å få svaret"
 description: "Forskning viser at elever som ledes til innsikt gjennom spørsmål lærer dypere og husker lenger enn elever som bare får svaret. Her er evidensen."
-date: 2026-03-31
+date: 2026-03-09
 author: "Halisonworks"
 type: forskning
 category: forskning

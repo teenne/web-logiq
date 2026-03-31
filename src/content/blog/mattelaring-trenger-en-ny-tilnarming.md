@@ -1,7 +1,7 @@
 ---
 title: "Mattelæring trenger en ny tilnærming"
 description: "Norske elevers matteferdigheter er i nedgang. PISA-resultater, frafall og utdaterte metoder peker mot behovet for en ny tilnærming til matematikkopplæring."
-date: 2026-03-31
+date: 2026-03-24
 author: "Halisonworks"
 tags:
   - forskning

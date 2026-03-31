@@ -1,7 +1,7 @@
 ---
 title: "Hva er kompetansemålene i Matematikk 2P?"
 description: "En enkel gjennomgang av kompetansemålene i Matematikk 2P fra Udir. Hva betyr de egentlig, og hva testes på eksamen?"
-date: 2026-03-31
+date: 2026-03-04
 author: "Halisonworks"
 type: fagguide
 category: laereplan

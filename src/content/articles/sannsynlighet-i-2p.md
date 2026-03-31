@@ -1,7 +1,7 @@
 ---
 title: "Sannsynlighet i 2P: fra grunnleggende til eksamen"
 description: "Alt du trenger å vite om sannsynlighet i Matematikk 2P. Begreper, valgtrær, kombinatorikk og de vanligste feilene elevene gjør."
-date: 2026-03-31
+date: 2026-03-30
 author: "Halisonworks"
 type: fagguide
 category: fagguide

@@ -1,7 +1,7 @@
 ---
 title: "3 ting du gjør feil når du øver på matte"
 description: "De fleste elever bruker studieteknikker som forskningen viser er ineffektive. Her er tre vanlige feil og hva du bør gjøre i stedet."
-date: 2026-03-31
+date: 2026-02-03
 author: "Halisonworks"
 type: teknikk
 category: studieteknikk

@@ -1,7 +1,7 @@
 ---
 title: "Hva er adaptiv læring, og hvorfor fungerer det?"
 description: "Adaptiv læring tilpasser undervisningen til hver enkelt elev i sanntid. Her er forskningen som viser hvorfor det fungerer, fra Blooms 2-sigma-problem til moderne metaanalyser."
-date: 2026-03-31
+date: 2026-02-28
 author: "Halisonworks"
 type: forskning
 category: forskning

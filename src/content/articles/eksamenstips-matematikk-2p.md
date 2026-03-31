@@ -1,7 +1,7 @@
 ---
 title: "Eksamenstips for Matematikk 2P: slik forbereder du deg"
 description: "Alt du trenger å vite om eksamen i Matematikk 2P. Oppbygning, vanlige feil, tidsfordeling og en konkret plan for de siste ukene."
-date: 2026-03-31
+date: 2026-02-22
 author: "Halisonworks"
 type: eksamen
 category: eksamen

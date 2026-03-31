@@ -1,7 +1,7 @@
 ---
 title: "Digital mattelæring: hva forskningen sier"
 description: "En gjennomgang av forskningen på digitale verktøy i matematikkopplæring. Hva fungerer, hva fungerer ikke, og hva bør du se etter?"
-date: 2026-03-31
+date: 2026-02-18
 author: "Halisonworks"
 type: forskning
 category: forskning

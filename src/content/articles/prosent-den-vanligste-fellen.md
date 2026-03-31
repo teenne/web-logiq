@@ -1,7 +1,7 @@
 ---
 title: "Prosent: den vanligste fellen i 2P"
 description: "Prosentregning er det emnet flest 2P-elever taper poeng på. Her er de vanligste feilene, hvorfor de skjer, og hvordan du unngår dem."
-date: 2026-03-31
+date: 2026-03-26
 author: "Halisonworks"
 type: fagguide
 category: fagguide

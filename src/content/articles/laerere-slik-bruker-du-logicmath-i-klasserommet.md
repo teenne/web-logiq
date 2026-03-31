@@ -1,7 +1,7 @@
 ---
 title: "Slik kan du bruke Logicmath i klasserommet"
 description: "En guide for lærere som vil bruke Logicmath til differensiering, lekser og diagnostisering i matematikkundervisningen."
-date: 2026-03-31
+date: 2026-03-13
 author: "Halisonworks"
 type: teknikk
 category: studieteknikk

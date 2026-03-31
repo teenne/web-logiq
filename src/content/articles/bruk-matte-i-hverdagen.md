@@ -1,7 +1,7 @@
 ---
 title: "Bruk matte i hverdagen: tips for foreldre"
 description: "Praktiske tips til foreldre som vil hjelpe barna sine med matte gjennom baking, handling, reiser og budsjettering. Hverdagen er full av matematikk."
-date: 2026-03-31
+date: 2026-02-14
 author: "Halisonworks"
 type: foreldreressurs
 category: foreldre

@@ -1,7 +1,7 @@
 ---
 title: "Algebra: grunnlaget som mangler hos de fleste"
 description: "Hvorfor algebra er grunnmuren i matematikk, og hvorfor så mange elever sliter med det. Vanlige hull fra ungdomsskolen og hvordan du tetter dem."
-date: 2026-03-31
+date: 2026-02-10
 author: "Halisonworks"
 type: fagguide
 category: fagguide

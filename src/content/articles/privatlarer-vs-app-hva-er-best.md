@@ -1,7 +1,7 @@
 ---
 title: "Privatlærer vs. app: hva er best for barnet ditt?"
 description: "En ærlig sammenligning av privatlærer og adaptiv læringsapp for mattetrening. Pris, fleksibilitet, forskning og hva som passer hvem."
-date: 2026-03-31
+date: 2026-03-22
 author: "Halisonworks"
 type: foreldreressurs
 category: foreldre

@@ -1,7 +1,7 @@
 ---
 title: "Hvorfor sliter norske elever med matte?"
 description: "PISA, TIMSS og norsk forskning viser et tydelig mønster: matteproblemer i videregående starter lenge før eleven begynner på 2P. Her er tallene og hva de betyr."
-date: 2026-03-31
+date: 2026-03-07
 author: "Halisonworks"
 type: forskning
 category: forskning

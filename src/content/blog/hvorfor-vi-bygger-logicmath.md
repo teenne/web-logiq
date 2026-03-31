@@ -1,7 +1,7 @@
 ---
 title: "Hvorfor vi bygger Logicmath"
 description: "Historien bak Logicmath. Hvilket problem vi så, hvorfor eksisterende løsninger ikke holder, og hva vår tilnærming er."
-date: 2026-03-31
+date: 2026-03-17
 author: "Halisonworks"
 tags:
   - logicmath
