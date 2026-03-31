@@ -66,4 +66,4 @@ Scaffolding (steg-for-steg nedbrytning) er en veldokumentert pedagogisk teknikk 
 5. **Interleaving** mellom ulike emner
 6. **Mikrosteg** når du står fast
 
-[Logicmath bygger disse teknikkene inn i hver læringsøkt automatisk](/velg-plan?fag=2p). Du trenger ikke planlegge, bare øve.
+[Logicmath bygger disse teknikkene inn i hver læringsøkt automatisk](/velg-fag). Du trenger ikke planlegge, bare øve.

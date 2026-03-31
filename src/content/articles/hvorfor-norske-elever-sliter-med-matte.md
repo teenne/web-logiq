@@ -43,4 +43,4 @@ Sokratisk veiledning, der eleven ledes til å finne svaret selv gjennom spørsm�
 
 Hvis du eller barnet ditt sliter med matte, er det sannsynligvis ikke et spørsmål om evner. Det er et spørsmål om hull som ingen har funnet og tettet. Jo lengre hullene får vokse, jo vanskeligere blir det.
 
-[Finn ut hvor hullene er med en gratis diagnostikk](/velg-plan?fag=2p).
+[Finn ut hvor hullene er med en gratis diagnostikk](/velg-fag).

@@ -65,4 +65,4 @@ Gå gjennom alt du har gjort feil. Forstå hvorfor. Gjør de samme oppgavene på
 
 Det viktigste steget er det første: finn ut hva du ikke kan. Alt annet bygger på det.
 
-[Ta en gratis diagnostikk for Matematikk 2P](/velg-plan?fag=2p).
+[Ta en gratis diagnostikk for Matematikk 2P](/velg-fag).

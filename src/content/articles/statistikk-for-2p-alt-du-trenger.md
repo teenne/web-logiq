@@ -94,4 +94,4 @@ Viser utvikling over tid. Les alltid aksene nøye: en bratt linje betyr rask end
 
 Statistikk i 2P handler like mye om å tolke som å regne. Den beste treningen er å jobbe med realistiske datasett og øve på å sette ord på det du ser.
 
-[Finn ut hvilke statistikkemner du trenger å øve mer på](/velg-plan?fag=2p).
+[Finn ut hvilke statistikkemner du trenger å øve mer på](/velg-fag).

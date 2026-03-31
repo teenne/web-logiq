@@ -104,4 +104,4 @@ Mange oppgaver ber deg "beskriv utviklingen". Bruk ord som "øker jevnt", "flate
 
 Funksjoner er et emne der mengdetrening med varierte oppgaver gir stor uttelling. Hvis du vil finne ut nøyaktig hvor du står, kan du starte med en diagnostisk test.
 
-[Start gratis diagnostikk for 2P-funksjoner](/velg-plan?fag=2p).
+[Start gratis diagnostikk for 2P-funksjoner](/velg-fag).

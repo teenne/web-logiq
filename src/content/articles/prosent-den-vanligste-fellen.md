@@ -74,4 +74,4 @@ Formelen K = K0 * vekstfaktor^n fungerer for alle gjentatte endringer. Gjør det
 
 Prosent er et emne der systematisk trening gjør stor forskjell. Hvis du merker at du gjør de samme feilene om igjen, kan det lønne seg å finne nøyaktig hvor forståelsen svikter.
 
-[Prøv en gratis diagnostikk og finn ut hva du trenger å øve på](/velg-plan?fag=2p).
+[Prøv en gratis diagnostikk og finn ut hva du trenger å øve på](/velg-fag).

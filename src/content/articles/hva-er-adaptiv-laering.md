@@ -70,4 +70,4 @@ Hattie og Timperley (2007) viste at tilbakemelding er blant de mest effektive l�
 
 Spranget fra forskningsresultater til faktisk læringsverktøy er ikke trivielt. Mange apper kaller seg "adaptive" uten å levere reell tilpasning. Det viktigste du kan se etter er om systemet faktisk diagnostiserer kunnskapshull, gir forklaringer tilpasset ditt nivå, og følger opp over tid.
 
-[Se hvordan adaptiv mattetrening fungerer i praksis](/velg-plan?fag=2p).
+[Se hvordan adaptiv mattetrening fungerer i praksis](/velg-fag).

@@ -72,4 +72,4 @@ Nasjonale prøver er et godt verktøy for det de er laget for: å gi et overordn
 
 Tenk på det slik: nasjonale prøver er som en helseundersøkelse som sier "du bør gå til legen". De sier ikke hva diagnosen er.
 
-[Prøv en gratis diagnostikk som finner de konkrete kunnskapshullene](/velg-plan?fag=2p).
+[Prøv en gratis diagnostikk som finner de konkrete kunnskapshullene](/velg-fag).
