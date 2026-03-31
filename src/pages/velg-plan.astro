@@ -92,7 +92,7 @@ const fagNavn: Record<string, string> = {
           <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent-100 dark:bg-accent-900/30">
             <svg class="h-8 w-8 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           </div>
-          <h2 id="pd-heading" class="mt-4 font-heading text-2xl font-bold text-primary-900 dark:text-white">Vi er nesten klare!</h2>
+          <h2 id="pd-heading" class="mt-4 font-heading text-2xl font-bold text-primary-900 dark:text-white">Snart klart!</h2>
           <p id="pd-message" class="mt-2 text-primary-600 dark:text-primary-400"></p>
         </div>
         <form id="pd-form" class="mt-6 space-y-4">
@@ -103,7 +103,7 @@ const fagNavn: Record<string, string> = {
             <label for="pd-email" class="mb-1 block text-sm font-medium text-primary-700 dark:text-primary-300">E-post</label>
             <input type="email" id="pd-email" name="email" required placeholder="deg@eksempel.no" class="w-full rounded-lg border border-primary-300 bg-white px-4 py-3 text-primary-900 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 dark:border-primary-600 dark:bg-primary-800 dark:text-white" />
           </div>
-          <button type="submit" class="w-full rounded-lg bg-accent-500 py-3 font-semibold text-white transition-colors hover:bg-accent-600">Sett meg på ventelisten</button>
+          <button type="submit" class="w-full rounded-lg bg-accent-500 py-3 font-semibold text-white transition-colors hover:bg-accent-600">Gi meg beskjed</button>
         </form>
         <div id="pd-success" class="mt-4 hidden text-center">
           <p class="text-sm font-medium text-green-600">Du er på ventelisten!</p>
@@ -172,12 +172,9 @@ const fagNavn: Record<string, string> = {
         }
 
         if (is2P) {
-          // 2P: show "coming soon" with download promise, no waitlist
-          pdMessage.textContent = `${subjectName} lanseres snart. Nedlastingen vil bli tilgjengelig her. Legg igjen e-posten din, så sender vi deg en lenke med en gang appen er klar.`;
+          pdMessage.textContent = `${subjectName} er i ferd med å rulles ut. Legg igjen e-posten din, så gir vi deg beskjed så snart du kan komme i gang.`;
         } else {
-          // Other subjects: waitlist
-          const tierLabel = selectedTier === 'gratis' ? 'gratisplanen' : selectedTier === 'maaned' ? 'månedsplanen' : 'årsplanen';
-          pdMessage.textContent = `${subjectName} er under utvikling. Sett deg på ventelisten for ${tierLabel}, så gir vi deg beskjed med en gang det er klart.`;
+          pdMessage.textContent = `${subjectName} er i ferd med å rulles ut. Legg igjen e-posten din, så gir vi deg beskjed så snart det er klart.`;
         }
 
         // Set hidden form fields
@@ -190,11 +187,11 @@ const fagNavn: Record<string, string> = {
 
         // Update button text based on context
         const formBtn = pdForm.querySelector('button[type="submit"]') as HTMLButtonElement;
-        if (formBtn) formBtn.textContent = is2P ? 'Send meg nedlastingslenke' : 'Sett meg på ventelisten';
+        if (formBtn) formBtn.textContent = 'Gi meg beskjed';
 
         // Update success message
         const successText = pdSuccess!.querySelector('p:first-child');
-        if (successText) successText.textContent = is2P ? 'Du får en e-post når appen er klar for nedlasting!' : 'Du er på ventelisten!';
+        if (successText) successText.textContent = 'Takk! Vi gir deg beskjed.';
 
         overlay.classList.remove('hidden');
         overlay.classList.add('flex');
