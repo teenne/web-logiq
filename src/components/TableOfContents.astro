@@ -1,4 +1,7 @@
 ---
+import { getLocaleFromUrl, t } from '../i18n/translations';
+const locale = getLocaleFromUrl(Astro.url);
+
 interface Heading {
   depth: number;
   slug: string;
@@ -16,9 +19,9 @@ const filtered = headings.filter((h) => h.depth === 2 || h.depth === 3);
 ---
 
 {filtered.length > 0 && (
-  <nav class="toc rounded-xl border border-primary-200 bg-primary-50/50 p-5" aria-label="Table of contents">
+  <nav class="toc rounded-xl border border-primary-200 bg-primary-50/50 p-5" aria-label={t(locale, 'ui.onThisPage')}>
     <p class="mb-3 text-xs font-semibold uppercase tracking-widest text-primary-500">
-      On this page
+      {t(locale, 'ui.onThisPage')}
     </p>
     <ol class="space-y-1.5">
       {filtered.map((heading) => (

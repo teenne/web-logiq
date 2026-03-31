@@ -7,62 +7,151 @@ import CTABanner from '../components/CTABanner.astro';
 import Footer from '../components/Footer.astro';
 
 const features = [
-  { title: 'Adaptiv Diagnostikk', description: '7 sporsmal per emne avslorer noyaktig ditt niva. Ikke gjetting, ikke generell start pa "niva 1". Du starter der du trenger det.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4M12 8h.01" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
-  { title: '5-Fase Laeringsokt', description: 'Oppvarming, teori, veiledet oving, repetisjon og oppsummering. Strukturert progresjon som bygger trygghet for utfordring.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
-  { title: 'AI-Mentor (Sokratisk)', description: 'Nar du star fast, stiller AI-mentoren ledende sporsmal i stedet for a gi svaret. Du laerer a tenke, ikke bare a kopiere.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
-  { title: 'Mikrosteg-Scaffolding', description: 'Vanskelige oppgaver brytes ned i 3-7 sma steg. Det som foltes umulig blir overkommelig, ett steg om gangen.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
-  { title: '543+ Oppgaver for 2P', description: 'Alle oppgaver er tilpasset Matematikk 2P kompetansemal fra Udir. Ovingen forbereder deg direkte til eksamen.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
-  { title: 'Fremgangsanalyse', description: 'Se mestring pa tvers av alle emner. Spor forbedringen din over tid. Vet at du faktisk blir bedre.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: 'Finn hullene dine', description: '7 spørsmål per emne avslører nøyaktig hva du kan og hva du mangler. Ingen gjetting, ingen "start på nivå 1". Du starter der du faktisk trenger det.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4M12 8h.01" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: 'Øv i din egen takt', description: 'Oppvarming, teori, veiledet øving, repetisjon og oppsummering. Fem steg som bygger trygghet før det blir vanskelig.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: 'Få hjelp uten å få svaret', description: 'Når du står fast, stiller AI-mentoren spørsmål som hjelper deg videre. Du lærer å tenke selv, ikke bare kopiere.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: 'Små steg, store fremskritt', description: 'Vanskelige oppgaver brytes ned i 3-7 små steg. Det som føles umulig blir overkommelig, ett steg om gangen.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: '543+ oppgaver for norsk læreplan', description: 'Alle oppgaver er tilpasset kompetansemål fra Udir. Øvingen forbereder deg direkte til eksamen.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+  { title: 'Se at du blir bedre', description: 'Se mestring på tvers av alle emner. Spor forbedringen din over tid. Vet at du faktisk går fremover.', icon: '<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke-linecap="round" stroke-linejoin="round" /></svg>' },
+];
+
+const mattefag = [
+  {
+    level: 'Barneskolen',
+    subjects: [
+      { name: 'Matematikk 1.-4. trinn', desc: 'Tallforståelse, addisjon, subtraksjon, enkel geometri', slug: 'matte-1-4' },
+      { name: 'Matematikk 5.-7. trinn', desc: 'Brøk, desimaltall, prosent, areal og omkrets', slug: 'matte-5-7' },
+    ],
+  },
+  {
+    level: 'Ungdomsskolen',
+    subjects: [
+      { name: 'Matematikk 8. trinn', desc: 'Algebra, likninger, negative tall, koordinatsystem', slug: 'matte-8' },
+      { name: 'Matematikk 9. trinn', desc: 'Funksjoner, lineære likninger, sannsynlighet', slug: 'matte-9' },
+      { name: 'Matematikk 10. trinn', desc: 'Andregradsfunksjoner, trigonometri, statistikk', slug: 'matte-10' },
+    ],
+  },
+  {
+    level: 'Videregående',
+    subjects: [
+      { name: '1P', desc: 'Praktisk matematikk: økonomi, prosent, statistikk', slug: '1p' },
+      { name: '1T', desc: 'Teoretisk matematikk: algebra, funksjoner, geometri', slug: '1t' },
+      { name: '2P', desc: 'Funksjoner, statistikk, sannsynlighet, modellering', slug: '2p' },
+      { name: 'S1', desc: 'Sannsynlighet, kombinatorikk, funksjonsanalyse', slug: 's1' },
+      { name: 'S2', desc: 'Integrasjon, differensiallikninger, statistisk modellering', slug: 's2' },
+      { name: 'R1', desc: 'Avansert algebra, derivasjon, vektorer', slug: 'r1' },
+      { name: 'R2', desc: 'Integrasjon, differensiallikninger, romgeometri', slug: 'r2' },
+    ],
+  },
 ];
 ---
-<BaseLayout title="Logicmath: Adaptiv Matte for Norske Elever" description="Finn ut noyaktig hvor du star i Matematikk 2P. AI-veiledet oving tilpasset ditt niva. 543+ oppgaver bygget for norsk laereplan.">
+<BaseLayout title="Logicmath: adaptiv matte for norske elever" description="Finn ut nøyaktig hvor du står i matte. AI-veiledet øving tilpasset ditt nivå. 543+ oppgaver bygget for norsk læreplan.">
   <Header />
   <main id="main-content">
-    <Hero headline="Du er ikke darlig i matte. Du har hull." subheadline="Logicmath finner hullene med en 7-sporsmals diagnostikk, bygger en personlig ovingsplan, og gir deg en AI-mentor som hjelper deg forsta, ikke bare fa svaret." ctaText="Last Ned Logicmath" ctaHref="/last-ned" secondaryCtaText="Se hvordan det fungerer" secondaryCtaHref="/hvordan-det-fungerer" variant="dark" />
+    <Hero headline="Du er ikke dårlig i matte. Du har hull." subheadline="Logicmath finner hullene med en kort diagnostikk, bygger en personlig øvingsplan og gir deg en AI-mentor som hjelper deg forstå, ikke bare få svaret." ctaText="Last ned Logicmath" ctaHref="/last-ned" secondaryCtaText="Se hvordan det fungerer" secondaryCtaHref="/hvordan-det-fungerer" variant="dark" />
 
     <section class="px-4 py-16 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-4xl text-center">
-        <h2 class="font-heading text-3xl font-bold text-primary-900 dark:text-white">Du stryker ikke fordi du er dum. Du stryker fordi hull fra tidligere ar gjor nye emner umulige.</h2>
+        <h2 class="font-heading text-3xl font-bold text-primary-900 dark:text-white">Du stryker ikke fordi du er dum. Du stryker fordi hull fra tidligere år gjør nye emner umulige.</h2>
       </div>
       <div class="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2">
         <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
           <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Vet ikke hva som mangler</h3>
-          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Du vet at du sliter med matte, men du vet ikke noyaktig hvilke emner eller konsepter som er problemet. Du over pa alt, men ingenting hjelper.</p>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Du vet at du sliter med matte, men du vet ikke nøyaktig hvilke emner eller konsepter som er problemet. Du øver på alt, men ingenting hjelper.</p>
         </div>
         <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
-          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Star fast uten hjelp</h3>
-          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Nar du star fast pa en oppgave, finnes det ingen hjelp. Laereren har gatt videre. Boka forklarer ikke pa en annen mate. Du gir opp.</p>
+          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Står fast uten hjelp</h3>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Når du står fast på en oppgave, finnes det ingen hjelp. Læreren har gått videre. Boka forklarer ikke på en annen måte. Du gir opp.</p>
         </div>
         <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
-          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Ovingene passer ikke</h3>
-          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Oppgavene i boka er enten for lette eller for vanskelige. Du enten kjeder deg eller blir frustrert. Ingen tilpasning til ditt niva.</p>
+          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Øvingene passer ikke</h3>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Oppgavene i boka er enten for lette eller for vanskelige. Du enten kjeder deg eller blir frustrert. Ingen tilpasning til ditt nivå.</p>
         </div>
         <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
-          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Privatlaerer er for dyrt</h3>
-          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">En privatlaerer koster 400-800 kr per time. Det er ikke et alternativ for alle familier, selv om det er det som fungerer best.</p>
+          <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Privatlærer er for dyrt</h3>
+          <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">En privatlærer koster 400-800 kr per time. Det er ikke et alternativ for alle familier, selv om det er det som fungerer best.</p>
         </div>
       </div>
     </section>
 
+    <!-- Hvilket mattefag sliter du med? -->
     <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-4xl text-center"><h2 class="font-heading text-3xl font-bold text-primary-900 dark:text-white">Slik fungerer det</h2><p class="mt-2 text-primary-600 dark:text-primary-400">Diagnostikk forst. Tilpasset oving. AI-veiledning nar du star fast.</p></div>
-      <div class="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-3">
-        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">1</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Ta diagnostikken</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">7 sporsmal per emne avslorer noyaktig ditt niva og kunnskapshull. Ingen gjetting. Du vet noyaktig hvor du star pa under 5 minutter.</p></div>
-        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">2</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Folg din sti</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Appen bygger en personlig laeringsokt: oppvarming, teori, veiledet oving og repetisjon. Alt pa ditt niva. AI-mentoren er der nar du star fast.</p></div>
-        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">3</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Se fremgangen din</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Spor mestring pa tvers av alle emner. Se forbedringen over tid. Appen tilpasser seg etter hvert som du vokser.</p></div>
+      <div class="mx-auto max-w-5xl">
+        <div class="text-center">
+          <h2 class="font-heading text-3xl font-bold text-primary-900 dark:text-white">Hvilket mattefag sliter du med?</h2>
+          <p class="mx-auto mt-2 max-w-2xl text-primary-600 dark:text-primary-400">Hull i matte starter tidlig og vokser for hvert år. Velg nivået ditt, så viser vi hvordan Logicmath kan hjelpe.</p>
+        </div>
+        <div class="mt-12 space-y-10">
+          {mattefag.map((group) => (
+            <div>
+              <h3 class="font-heading text-lg font-semibold text-primary-700 dark:text-primary-300">{group.level}</h3>
+              <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {group.subjects.map((subject) => (
+                  <a href={`/velg-plan?fag=${subject.slug}`} class="block rounded-xl border border-primary-200 p-5 transition-all hover:border-accent-500 hover:shadow-md dark:border-primary-700 dark:hover:border-accent-500" data-track="subject_click" data-label={subject.slug}>
+                    <h4 class="font-heading font-semibold text-primary-900 dark:text-white">{subject.name}</h4>
+                    <p class="mt-1 text-sm text-primary-600 dark:text-primary-400">{subject.desc}</p>
+                    <p class="mt-3 text-xs font-semibold text-accent-600">Velg plan →</p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="mt-8 text-center text-sm text-primary-500 dark:text-primary-400">Velg faget ditt for å se planer og priser.</p>
       </div>
     </section>
 
-    <FeatureGrid sectionTitle="Slik fungerer det" sectionSubtitle="Diagnostikk forst. Tilpasset oving. AI-veiledning nar du star fast." features={features} />
+    <!-- Slik fungerer det -->
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center"><h2 class="font-heading text-3xl font-bold text-primary-900 dark:text-white">Slik fungerer det</h2><p class="mt-2 text-primary-600 dark:text-primary-400">Diagnostikk først. Tilpasset øving. Veiledning når du står fast.</p></div>
+      <div class="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-3">
+        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">1</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Ta diagnostikken</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">7 spørsmål per emne avslører nøyaktig ditt nivå og kunnskapshull. Ingen gjetting. Du vet hvor du står på under 5 minutter.</p></div>
+        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">2</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Følg din sti</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Appen bygger en personlig læringsøkt: oppvarming, teori, veiledet øving og repetisjon. Alt på ditt nivå. AI-mentoren er der når du står fast.</p></div>
+        <div class="text-center"><div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">3</div><h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Se fremgangen din</h3><p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Spor mestring på tvers av alle emner. Se forbedringen over tid. Appen tilpasser seg etter hvert som du vokser.</p></div>
+      </div>
+    </section>
+
+    <FeatureGrid sectionTitle="Hva du får" sectionSubtitle="Alt du trenger for å tette hullene og mestre matte." features={features} />
+
+    <!-- For foreldre -->
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <div class="text-center">
+          <h2 class="font-heading text-3xl font-bold text-primary-900 dark:text-white">For foreldre</h2>
+          <p class="mt-2 text-primary-600 dark:text-primary-400">Du trenger ikke være mattelærer for å hjelpe barnet ditt.</p>
+        </div>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2">
+          <div class="rounded-xl border border-primary-200 bg-white p-6 dark:border-primary-700 dark:bg-primary-900">
+            <h3 class="font-heading font-semibold text-primary-900 dark:text-white">Se hva barnet faktisk sliter med</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Diagnostikken viser nøyaktig hvilke emner og konsepter som mangler. Ikke vage karakterer, men konkrete hull.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 bg-white p-6 dark:border-primary-700 dark:bg-primary-900">
+            <h3 class="font-heading font-semibold text-primary-900 dark:text-white">Billigere enn privatlærer</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">En privatlærer koster 400-800 kr per time. Logicmath gir tilpasset hjelp til en brøkdel av prisen, tilgjengelig når som helst.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 bg-white p-6 dark:border-primary-700 dark:bg-primary-900">
+            <h3 class="font-heading font-semibold text-primary-900 dark:text-white">Trygt og norsk</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Bygget av Halisonworks i Norge. Data lagres lokalt på enheten. Ingen reklame, ingen spillifisering, ingen manipulasjon.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 bg-white p-6 dark:border-primary-700 dark:bg-primary-900">
+            <h3 class="font-heading font-semibold text-primary-900 dark:text-white">Følg fremgangen</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Se hvordan barnet ditt utvikler seg over tid, uten å måtte sitte ved siden av og kontrollere.</p>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <a href="/for-foreldre" class="inline-flex items-center rounded-md bg-primary-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-600">Les mer for foreldre</a>
+        </div>
+      </div>
+    </section>
 
     <section class="px-4 py-16 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-4xl text-center">
-        <p class="text-sm text-primary-500 dark:text-primary-400">543+ oppgaver. Tilpasset Matematikk 2P. AI-mentor som veileder, ikke gir svaret.</p>
-        <p class="mt-2 text-sm text-primary-500 dark:text-primary-400">Gratis diagnostikk for forste emne. Se hvor du faktisk star for du bestemmer deg.</p>
+        <p class="text-sm text-primary-500 dark:text-primary-400">543+ oppgaver. Tilpasset norsk læreplan. AI-mentor som veileder, ikke gir svaret.</p>
+        <p class="mt-2 text-sm text-primary-500 dark:text-primary-400">Gratis diagnostikk for første emne. Se hvor du faktisk står før du bestemmer deg.</p>
       </div>
     </section>
 
-    <CTABanner headline="Barnet ditt er ikke darlig i matte. Det har hull ingen har funnet for." ctaText="Last Ned Logicmath" ctaHref="/last-ned" variant="accent" />
+    <CTABanner headline="Barnet ditt er ikke dårlig i matte. Det har hull ingen har funnet før." ctaText="Last ned Logicmath" ctaHref="/last-ned" variant="accent" />
   </main>
   <Footer />
 </BaseLayout>

@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Slik fungerer det | Logicmath" description="Logicmath finner kunnskapshull med en kort diagnostikk, bygger personlige læringsøkter og gir AI-veiledning når du står fast. Slik fungerer det.">
+  <Header />
+  <main id="main-content">
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="font-heading text-4xl font-bold text-primary-900 dark:text-white md:text-5xl">Slik fungerer Logicmath</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-primary-600 dark:text-primary-400">Tre steg: finn hullene, tett dem med tilpasset øving, få hjelp når du står fast.</p>
+      </div>
+    </section>
+
+    <!-- Steg 1 -->
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <div class="flex items-start gap-6">
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary-700 text-white font-heading text-2xl font-bold">1</div>
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Diagnostikk: finn hullene</h2>
+            <div class="mt-4 space-y-3 text-primary-600 dark:text-primary-400">
+              <p>Du starter med en kort diagnostikk. 7 spørsmål per emne, valgt adaptivt basert på svarene dine. Tar under 5 minutter per emne.</p>
+              <p>Diagnostikken avslører nøyaktig hvilke konsepter du mestrer og hvilke du mangler. Ikke en vag karakter, men en konkret oversikt over hullene dine.</p>
+              <p>Hvert spørsmål er designet for å skille mellom "forstår konseptet" og "gjetter riktig". Systemet ser forskjellen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steg 2 -->
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <div class="flex items-start gap-6">
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary-700 text-white font-heading text-2xl font-bold">2</div>
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Læringsøkt: tett hullene</h2>
+            <div class="mt-4 space-y-3 text-primary-600 dark:text-primary-400">
+              <p>Basert på diagnostikken bygger appen en personlig læringsøkt med fem faser:</p>
+              <ol class="ml-4 list-decimal space-y-2">
+                <li><strong>Oppvarming.</strong> Korte oppgaver du allerede mestrer. Bygger trygghet og aktiverer relevant kunnskap.</li>
+                <li><strong>Teori.</strong> Kort forklaring av konseptet du skal jobbe med. Tilpasset ditt nivå.</li>
+                <li><strong>Veiledet øving.</strong> Oppgaver med gradvis økende vanskelighetsgrad. AI-mentoren er tilgjengelig om du står fast.</li>
+                <li><strong>Repetisjon.</strong> Oppgaver fra tidligere emner for å sikre at det du har lært holder seg.</li>
+                <li><strong>Oppsummering.</strong> Hva du mestret, hva som trenger mer arbeid, og hva neste økt vil fokusere på.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steg 3 -->
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <div class="flex items-start gap-6">
+          <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary-700 text-white font-heading text-2xl font-bold">3</div>
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">AI-mentor: hjelp når du står fast</h2>
+            <div class="mt-4 space-y-3 text-primary-600 dark:text-primary-400">
+              <p>Når du står fast på en oppgave, kan du be AI-mentoren om hjelp. Men mentoren gir deg ikke svaret.</p>
+              <p>I stedet bruker den sokratisk metode: den stiller spørsmål som leder deg til å finne svaret selv. For eksempel:</p>
+              <ul class="ml-4 list-disc space-y-1">
+                <li>"Hva vet du allerede om denne typen oppgave?"</li>
+                <li>"Hva er første steg for å løse dette?"</li>
+                <li>"Kan du forenkle uttrykket først?"</li>
+              </ul>
+              <p>Forskning viser at denne tilnærmingen gir dypere forståelse enn å bli fortalt svaret direkte. Du lærer å tenke matematisk, ikke bare å kopiere.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fremgang -->
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Se fremgangen din</h2>
+        <div class="mt-4 space-y-3 text-primary-600 dark:text-primary-400">
+          <p>Etter hver økt oppdateres en oversikt som viser mestring på tvers av alle emner. Du ser:</p>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Hvilke emner du mestrer</li>
+            <li>Hvilke du jobber med</li>
+            <li>Hvilke som fortsatt er hull</li>
+            <li>Forbedring over tid</li>
+          </ul>
+          <p>Appen tilpasser seg automatisk. Emner du mestrer dukker opp sjeldnere. Hull får mer fokus. Du bruker tiden der det gir mest utbytte.</p>
+        </div>
+      </div>
+    </section>
+
+    <CTABanner headline="Finn ut hvor du står. Gratis diagnostikk for første emne." ctaText="Velg mattefag" ctaHref="/velg-plan?fag=2p" variant="accent" />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,24 +1,15 @@
 ---
-interface ServiceOption {
-  value: string;
-  label: string;
-}
-
-interface ServiceGroup {
-  group: string;
-  options: ServiceOption[];
-}
+import { getLocaleFromUrl, t } from '../i18n/translations';
+const locale = getLocaleFromUrl(Astro.url);
 
 interface Props {
   formTitle?: string;
   showCompanyField?: boolean;
-  serviceOptions?: ServiceGroup[];
 }
 
 const {
-  formTitle = 'Get in Touch',
-  showCompanyField = true,
-  serviceOptions,
+  formTitle = t(locale, 'contact.title'),
+  showCompanyField = false,
 } = Astro.props;
 
 const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
@@ -33,16 +24,14 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
     )}
 
     <form id="contact-form" class="space-y-5" novalidate>
-      <!-- Hidden fields -->
       <input type="hidden" name="access_key" value={accessKey} />
-      <input type="hidden" name="subject" value="New Contact Form Submission" />
-      <input type="hidden" name="from_name" value="Website Contact Form" />
+      <input type="hidden" name="subject" value="Ny melding fra Logicmath" />
+      <input type="hidden" name="from_name" value="Logicmath kontaktskjema" />
       <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
 
-      <!-- Name -->
       <div>
         <label for="contact-name" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          Name <span class="text-red-500">*</span>
+          {t(locale, 'contact.name')} <span class="text-red-500">{t(locale, 'contact.required')}</span>
         </label>
         <input
           type="text"
@@ -51,15 +40,14 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
           required
           aria-describedby="error-name"
           class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-shadow focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 dark:border-primary-600 dark:bg-primary-900 dark:text-white dark:placeholder:text-gray-500"
-          placeholder="Your name"
+          placeholder="Ditt navn"
         />
-        <p class="mt-1 hidden text-sm text-red-600" id="error-name" data-error="name">Please enter your name.</p>
+        <p class="mt-1 hidden text-sm text-red-600" id="error-name" data-error="name">{t(locale, 'contact.errorName')}</p>
       </div>
 
-      <!-- Email -->
       <div>
         <label for="contact-email" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          Email <span class="text-red-500">*</span>
+          {t(locale, 'contact.email')} <span class="text-red-500">{t(locale, 'contact.required')}</span>
         </label>
         <input
           type="email"
@@ -68,54 +56,29 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
           required
           aria-describedby="error-email"
           class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-shadow focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 dark:border-primary-600 dark:bg-primary-900 dark:text-white dark:placeholder:text-gray-500"
-          placeholder="you@example.com"
+          placeholder="deg@eksempel.no"
         />
-        <p class="mt-1 hidden text-sm text-red-600" id="error-email" data-error="email">Please enter a valid email address.</p>
+        <p class="mt-1 hidden text-sm text-red-600" id="error-email" data-error="email">{t(locale, 'contact.errorEmail')}</p>
       </div>
 
-      <!-- Company (optional) -->
       {showCompanyField && (
         <div>
           <label for="contact-company" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
-            Company
+            {t(locale, 'contact.company')}
           </label>
           <input
             type="text"
             id="contact-company"
             name="company"
             class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-shadow focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 dark:border-primary-600 dark:bg-primary-900 dark:text-white dark:placeholder:text-gray-500"
-            placeholder="Your company"
+            placeholder="Din bedrift"
           />
         </div>
       )}
 
-      <!-- Service Interest -->
-      {serviceOptions && serviceOptions.length > 0 && (
-        <div>
-          <label for="contact-service" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
-            Service Interest
-          </label>
-          <select
-            id="contact-service"
-            name="service"
-            class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-shadow focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 dark:border-primary-600 dark:bg-primary-900 dark:text-white"
-          >
-            <option value="">Select a service...</option>
-            {serviceOptions.map((group) => (
-              <optgroup label={group.group}>
-                {group.options.map((opt) => (
-                  <option value={opt.value}>{opt.label}</option>
-                ))}
-              </optgroup>
-            ))}
-          </select>
-        </div>
-      )}
-
-      <!-- Message -->
       <div>
         <label for="contact-message" class="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-300">
-          Message <span class="text-red-500">*</span>
+          {t(locale, 'contact.message')} <span class="text-red-500">{t(locale, 'contact.required')}</span>
         </label>
         <textarea
           id="contact-message"
@@ -124,15 +87,13 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
           rows="5"
           aria-describedby="error-message"
           class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-shadow focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 dark:border-primary-600 dark:bg-primary-900 dark:text-white dark:placeholder:text-gray-500"
-          placeholder="Tell us about your project..."
+          placeholder="Skriv meldingen din her..."
         ></textarea>
-        <p class="mt-1 hidden text-sm text-red-600" id="error-message" data-error="message">Please enter a message.</p>
+        <p class="mt-1 hidden text-sm text-red-600" id="error-message" data-error="message">{t(locale, 'contact.errorMessage')}</p>
       </div>
 
-      <!-- hCaptcha -->
       <div class="h-captcha" data-captcha="true"></div>
 
-      <!-- GDPR Consent -->
       <div class="flex items-start gap-2">
         <input
           type="checkbox"
@@ -143,21 +104,19 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
           class="mt-1 h-4 w-4 rounded border-gray-300 text-accent-500 focus:ring-accent-500"
         />
         <label for="contact-consent" class="text-sm text-gray-600 dark:text-gray-400">
-          I agree to the <a href="/privacy" class="font-medium text-accent-600 underline hover:text-accent-500">privacy policy</a> and consent to having my data processed. <span class="text-red-500">*</span>
+          {t(locale, 'contact.consent')} <a href="/personvern" class="font-medium text-accent-600 underline hover:text-accent-500">{t(locale, 'contact.consentLink')}</a> {t(locale, 'contact.consentSuffix')} <span class="text-red-500">{t(locale, 'contact.required')}</span>
         </label>
       </div>
-      <p class="mt-1 hidden text-sm text-red-600" id="error-consent" data-error="consent">You must agree to the privacy policy.</p>
+      <p class="mt-1 hidden text-sm text-red-600" id="error-consent" data-error="consent">{t(locale, 'contact.errorConsent')}</p>
 
-      <!-- Submit -->
       <button
         type="submit"
         id="contact-submit"
         class="w-full rounded-lg bg-primary-800 py-3 font-semibold text-white transition-colors duration-200 hover:bg-primary-900 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-primary-700 dark:hover:bg-primary-600"
       >
-        Send Message
+        {t(locale, 'contact.submit')}
       </button>
 
-      <!-- Form-level error -->
       <p class="hidden text-center text-sm text-red-600" id="contact-form-error" aria-live="assertive"></p>
     </form>
   </div>
@@ -169,6 +128,7 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const submitBtn = document.getElementById('contact-submit') as HTMLButtonElement;
   const formError = document.getElementById('contact-form-error') as HTMLParagraphElement;
+  const submitText = submitBtn?.textContent || 'Send melding';
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -205,7 +165,7 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
     if (!validate()) return;
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
+    submitBtn.textContent = 'Sender...';
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -216,23 +176,23 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
       const data = await res.json();
 
       if (data.success) {
-        window.location.href = '/contact/thank-you';
+        window.location.href = '/kontakt/thank-you';
       } else {
-        formError.textContent = data.message || 'Something went wrong. Please try again.';
+        formError.textContent = data.message || 'Noe gikk galt. Prøv igjen.';
         formError.classList.remove('hidden');
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
+        submitBtn.textContent = submitText;
       }
     } catch {
       attempts++;
       if (attempts < maxAttempts) {
         formError.textContent = '';
-        const msgNode = document.createTextNode('Network error. ');
+        const msgNode = document.createTextNode('Nettverksfeil. ');
         const retryBtn = document.createElement('button');
         retryBtn.type = 'button';
         retryBtn.id = 'retry-btn';
         retryBtn.className = 'underline font-medium';
-        retryBtn.textContent = 'Retry';
+        retryBtn.textContent = 'Prøv igjen';
         retryBtn.addEventListener('click', () => {
           formError.classList.add('hidden');
           form.dispatchEvent(new Event('submit'));
@@ -241,11 +201,11 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
         formError.appendChild(retryBtn);
         formError.classList.remove('hidden');
       } else {
-        formError.textContent = 'Network error after multiple attempts. Please check your connection and try again later.';
+        formError.textContent = 'Nettverksfeil etter flere forsøk. Sjekk tilkoblingen din og prøv igjen senere.';
         formError.classList.remove('hidden');
       }
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message';
+      submitBtn.textContent = submitText;
     }
   });
 </script>

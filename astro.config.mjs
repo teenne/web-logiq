@@ -9,7 +9,9 @@ export default defineConfig({
   site: 'https://logiq.halisonworks.com',
 
   integrations: [
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes('/thank-you'),
+    }),
     mdx(),
   ],
 

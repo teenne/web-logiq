@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Personvern | Logicmath" description="Les Logicmaths personvernerklæring.">
+  <Header />
+  <main id="main-content">
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <h1 class="font-heading text-4xl font-bold text-primary-900 dark:text-white">Personvernerklæring</h1>
+        <p class="mt-4 text-sm text-primary-500">Gyldig fra: 26. mars 2026</p>
+        <div class="prose prose-primary mt-8 max-w-none dark:prose-invert">
+          <p>Halisonworks AS ("vi," "oss," "vår") utvikler Logicmath. Denne personvernerklæringen forklarer hvordan vi håndterer data.</p>
+          <h2>1. Behandlingsansvarlig</h2><p>Halisonworks AS, Norge. Kontakt: privacy@halisonworks.com</p>
+          <h2>2. Hvilke data vi samler inn</h2>
+          <p><strong>Skrivebordsapplikasjon:</strong></p>
+          <ul><li>Studentprofil: navn eller kallenavn, valgte matematikkemner, ferdighetsnivåer</li><li>Diagnostiske resultater og øvingshistorikk</li><li>Fremgangsanalyse (mestringsnivåer, økter)</li><li>AI-mentor interaksjonsdata</li></ul>
+          <p>Kjernedata lagres lokalt på studentens enhet. AI-mentorfunksjoner krever internettilkobling.</p>
+          <p><strong>Nettsted:</strong></p><ul><li>Analysedata: sidebesøk, økttid (PostHog)</li></ul>
+          <h2>3. Barns personvern</h2>
+          <p>Logicmath er designet for elever 16-18 år. Vi praktiserer dataminimering.</p>
+          <ul><li>Vi krever ikke ekte navn.</li><li>Vi samler ikke inn posisjonsdata.</li><li>Vi viser ikke reklame.</li><li>Vi bruker ikke spillifiseringsmekanismer som manipulerer engasjement.</li></ul>
+          <h2>4. Dine rettigheter</h2><p>Innsyn, retting, sletting, begrensning, dataportabilitet, innsigelse. Kontakt privacy@halisonworks.com.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,4 +1,7 @@
 ---
+import { getLocaleFromUrl, t } from '../i18n/translations';
+const locale = getLocaleFromUrl(Astro.url);
+
 interface BreadcrumbItem {
   label: string;
   href?: string;
@@ -11,10 +14,10 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<nav aria-label="Breadcrumb" class="px-4 py-3 sm:px-6 lg:px-8">
+<nav aria-label={t(locale, 'ui.breadcrumb')} class="px-4 py-3 sm:px-6 lg:px-8">
   <ol class="mx-auto flex max-w-7xl flex-wrap items-center gap-1 text-sm text-primary-500">
     <li>
-      <a href="/" class="transition-colors hover:text-accent-600">Home</a>
+      <a href="/" class="transition-colors hover:text-accent-600">{t(locale, 'ui.home')}</a>
     </li>
     {items.map((item, index) => (
       <li class="flex items-center gap-1">

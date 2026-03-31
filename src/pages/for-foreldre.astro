@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="For foreldre | Logicmath" description="Barnet ditt er ikke dårlig i matte. Det har hull ingen har funnet. Logicmath kartlegger hullene og gir tilpasset øving med AI-veiledning.">
+  <Header />
+  <main id="main-content">
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="font-heading text-4xl font-bold text-primary-900 dark:text-white md:text-5xl">Barnet ditt er ikke dårlig i matte. Det har hull.</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-primary-600 dark:text-primary-400">De fleste matteproblemer i videregående starter lenge før eleven begynner der. Logicmath finner hullene og hjelper barnet ditt tette dem, i sitt eget tempo.</p>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Kjenner du dette?</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2">
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Karakterene faller, men du vet ikke hvorfor</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Barnet ditt jobber, men resultatene blir ikke bedre. Det kan skyldes hull fra tidligere som gjør nye emner uforståelige. Mer øving på feil nivå hjelper ikke.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Du vil hjelpe, men vet ikke hvordan</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Matte har endret seg siden du gikk på skolen. Du føler deg usikker på om du forklarer riktig, og leksehjelpen ender i frustrasjon for begge.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Privatlærer er for dyrt</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">400-800 kr per time. Det er ikke et realistisk alternativ for mange familier, selv om det er det som fungerer best for individuell tilpasning.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Barnet har mistet motivasjonen</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Gjentatte opplevelser av å ikke forstå bygger frustrasjon og matteangst. Barnet sier "Jeg kan ikke matte" og har sluttet å prøve.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Slik hjelper Logicmath</h2>
+        <div class="mt-8 space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold">1</div>
+            <div>
+              <h3 class="font-heading font-semibold text-primary-900 dark:text-white">Finner hullene automatisk</h3>
+              <p class="mt-1 text-sm text-primary-600 dark:text-primary-400">En kort diagnostikk (7 spørsmål per emne) avslører nøyaktig hvilke konsepter barnet mangler. Ikke vage karakterer, men konkrete hull du kan forstå.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold">2</div>
+            <div>
+              <h3 class="font-heading font-semibold text-primary-900 dark:text-white">Bygger en personlig plan</h3>
+              <p class="mt-1 text-sm text-primary-600 dark:text-primary-400">Appen lager læringsøkter tilpasset barnets nivå: oppvarming, teori, veiledet øving og repetisjon. Alt automatisk, uten at du trenger å planlegge.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold">3</div>
+            <div>
+              <h3 class="font-heading font-semibold text-primary-900 dark:text-white">AI-mentor når du ikke er der</h3>
+              <p class="mt-1 text-sm text-primary-600 dark:text-primary-400">Når barnet står fast, stiller AI-mentoren ledende spørsmål som hjelper dem tenke videre. Ingen svar gis direkte. Barnet lærer å løse problemer selv.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold">4</div>
+            <div>
+              <h3 class="font-heading font-semibold text-primary-900 dark:text-white">Du ser fremgangen</h3>
+              <p class="mt-1 text-sm text-primary-600 dark:text-primary-400">Følg barnets utvikling over tid. Se hvilke emner som er mestret og hvilke som fortsatt trenger arbeid, uten å sitte ved siden av og kontrollere.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Trygt og norsk</h2>
+        <div class="mt-8 space-y-4 text-primary-600 dark:text-primary-400">
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Bygget av Halisonworks i Norge.</strong> Norsk selskap, norsk læreplan, norsk språk.</p></div>
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Data lagres lokalt.</strong> Kjernedata lagres på barnets enhet. Ikke i skyen.</p></div>
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Ingen reklame.</strong> Ingen tredjepartssporing i appen. Ingen datasal.</p></div>
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Ingen spillifisering.</strong> Ingen poeng, streaks eller manipulerende design. Vi respekterer barnets tid og verdighet.</p></div>
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Tilpasset Udir sine kompetansemål.</strong> 543+ oppgaver for Matematikk 2P. Flere fag kommer.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <CTABanner headline="Se hvor barnet ditt faktisk står i matte. Gratis diagnostikk for første emne." ctaText="Velg mattefag" ctaHref="/velg-plan?fag=2p" variant="accent" />
+  </main>
+  <Footer />
+</BaseLayout>

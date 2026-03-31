@@ -1,4 +1,7 @@
 ---
+import { getLocaleFromUrl, t } from '../i18n/translations';
+const locale = getLocaleFromUrl(Astro.url);
+
 interface Props {
   heading?: string;
   description?: string;
@@ -6,9 +9,9 @@ interface Props {
 }
 
 const {
-  heading = "Stay in the loop",
-  description = "Get the latest articles and updates.",
-  buttonText = "Subscribe",
+  heading = t(locale, 'newsletter.heading'),
+  description = t(locale, 'newsletter.description'),
+  buttonText = t(locale, 'newsletter.subscribe'),
 } = Astro.props;
 ---
 
@@ -24,13 +27,13 @@ const {
     class="mt-6 flex flex-col gap-3 sm:flex-row"
     data-newsletter-form
   >
-    <label class="sr-only" for="newsletter-email">Email address</label>
+    <label class="sr-only" for="newsletter-email">{t(locale, 'contact.email')}</label>
     <input
       id="newsletter-email"
       type="email"
       name="email"
       required
-      placeholder="you@example.com"
+      placeholder={t(locale, 'newsletter.placeholder')}
       autocomplete="email"
       class="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500/20 dark:border-primary-600 dark:bg-primary-800 dark:text-white dark:placeholder:text-gray-500"
     />
@@ -43,7 +46,7 @@ const {
   </form>
 
   <p class="mt-2 text-center text-xs text-gray-400">
-    By subscribing, you agree to our <a href="/privacy" class="underline hover:text-gray-600">privacy policy</a>.
+    {t(locale, 'newsletter.consent')} <a href="/personvern" class="underline hover:text-gray-600">{t(locale, 'cookie.privacyLink')}</a>.
   </p>
 
   <div
@@ -75,7 +78,7 @@ const {
         );
 
         if (!keyMeta?.content) {
-          window.location.href = `mailto:?subject=Subscribe&body=Please subscribe me: ${encodeURIComponent(email)}`;
+          window.location.href = `mailto:hello@halisonworks.com?subject=Abonner&body=Meld meg på nyhetsbrevet: ${encodeURIComponent(email)}`;
           return;
         }
 
@@ -98,7 +101,7 @@ const {
           );
 
           if (res.ok || res.status === 201) {
-            statusEl.textContent = "Thanks for subscribing!";
+            statusEl.textContent = "Takk for at du abonnerer!";
             statusEl.className = "mt-3 text-center text-sm text-green-600";
             form.reset();
 
@@ -113,12 +116,12 @@ const {
           } else {
             const data = await res.json().catch(() => null);
             const message =
-              data?.detail || data?.email?.[0] || "Something went wrong. Please try again.";
+              data?.detail || data?.email?.[0] || "Noe gikk galt. Prøv igjen.";
             statusEl.textContent = message;
             statusEl.className = "mt-3 text-center text-sm text-red-600";
           }
         } catch {
-          statusEl.textContent = "Network error. Please try again.";
+          statusEl.textContent = "Nettverksfeil. Prøv igjen.";
           statusEl.className = "mt-3 text-center text-sm text-red-600";
         } finally {
           if (submitBtn) submitBtn.disabled = false;

@@ -1,4 +1,7 @@
 ---
+import { getLocaleFromUrl, t } from '../i18n/translations';
+const locale = getLocaleFromUrl(Astro.url);
+
 interface NavItem {
   title: string;
   href: string;
@@ -15,7 +18,7 @@ const { prev, next } = Astro.props;
 {(prev || next) && (
   <nav
     class="mt-10 flex flex-col gap-4 border-t border-primary-200 pt-8 sm:flex-row sm:justify-between"
-    aria-label="Post navigation"
+    aria-label={t(locale, 'ui.postNav')}
   >
     <!-- Previous -->
     <div class="flex-1">
@@ -29,7 +32,7 @@ const { prev, next } = Astro.props;
             <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
-            Previous
+            {t(locale, 'ui.previous')}
           </span>
           <span class="font-heading text-sm font-semibold text-primary-900 group-hover:text-accent-600 line-clamp-2">
             {prev.title}
@@ -49,7 +52,7 @@ const { prev, next } = Astro.props;
           rel="next"
         >
           <span class="flex items-center gap-1 text-xs font-medium text-primary-400 group-hover:text-accent-600">
-            Next
+            {t(locale, 'ui.next')}
             <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>

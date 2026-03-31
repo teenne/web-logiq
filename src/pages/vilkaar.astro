@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="Brukervilkår | Logicmath" description="Les Logicmaths brukervilkår.">
+  <Header />
+  <main id="main-content">
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl">
+        <h1 class="font-heading text-4xl font-bold text-primary-900 dark:text-white">Brukervilkår</h1>
+        <p class="mt-4 text-sm text-primary-500">Gyldig fra: 26. mars 2026</p>
+        <div class="prose prose-primary mt-8 max-w-none dark:prose-invert">
+          <h2>1. Tjenestebeskrivelse</h2><p>Logicmath er en adaptiv mattelæringsapp for norske videregåendeelever (Matematikk 2P) med AI-veiledet øving og diagnostiske tester.</p>
+          <h2>2. Pedagogisk forbehold</h2><p>Logicmath supplerer klasseromsundervisning. Den erstatter ikke lærere, privatlærere eller formell utdanning. Vi garanterer ikke spesifikke karakterforbedringer.</p>
+          <h2>3. AI-mentor</h2><p>AI-mentoren veileder forståelse gjennom sokratisk metode. Den løser ikke oppgaver for elevene eller gir svar direkte.</p>
+          <h2>4. Alderskrav</h2><p>Logicmath er designet for elever 16-18 år. Elever under 16 bør ha foreldrenes samtykke.</p>
+          <h2>5. Gratis/betalt modell</h2><p>Priser er ikke fastsatt. Eventuelle betalte funksjoner vil bli tydelig kommunisert før kjøp.</p>
+          <h2>6. Gjeldende lov</h2><p>Norsk lov. Oslo tingrett.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

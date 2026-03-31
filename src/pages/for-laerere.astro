@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="For lærere | Logicmath" description="Logicmath gir lærere innsikt i elevenes kunnskapshull og tilbyr adaptiv øving tilpasset hvert nivå. Spar tid på differensiering.">
+  <Header />
+  <main id="main-content">
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="font-heading text-4xl font-bold text-primary-900 dark:text-white md:text-5xl">Gi hver elev øving tilpasset deres nivå</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-primary-600 dark:text-primary-400">Logicmath kartlegger kunnskapshull automatisk og bygger personlige læringsøkter for Matematikk 2P. Du får innsikt i hva elevene trenger, uten ekstra arbeid.</p>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Utfordringene du kjenner</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2">
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Elevene har ulike hull</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Noen mangler grunnleggende algebra, andre sliter med prosent. Det er umulig å differensiere for alle i en klasse med 30 elever.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Tid til differensiering finnes ikke</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Du vet at elevene trenger individuell tilpasning, men det er ikke nok timer i døgnet til å lage tilpassede oppgavesett for hver enkelt.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Vanskelig å finne hullene</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">En elev som stryker på prøven i funksjoner kan ha hullet i brøkregning fra ungdomsskolen. Det er tidkrevende å diagnostisere årsaken bak symptomet.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Elever gir opp mellom timene</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Når eleven sitter hjemme og står fast, finnes det ingen hjelp. De gir opp og kommer tilbake neste time like frustrert.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Slik hjelper Logicmath deg som lærer</h2>
+        <div class="mt-8 grid gap-8 md:grid-cols-3">
+          <div class="text-center">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">1</div>
+            <h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Automatisk diagnostikk</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Eleven tar en kort diagnostikk (7 spørsmål per emne) som avslører nøyaktig hvilke konsepter som mangler. Ingen gjetting.</p>
+          </div>
+          <div class="text-center">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">2</div>
+            <h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Tilpassede læringsøkter</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Appen bygger automatisk en personlig øvingsplan med oppvarming, teori, veiledet øving og repetisjon, tilpasset elevens nivå.</p>
+          </div>
+          <div class="text-center">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">3</div>
+            <h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">AI-mentor når du ikke er der</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Når eleven står fast hjemme, stiller AI-mentoren ledende spørsmål (sokratisk metode) som hjelper eleven tenke videre, uten å gi svaret.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Bygget for norsk skole</h2>
+        <div class="mt-8 space-y-4 text-primary-600 dark:text-primary-400">
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>543+ oppgaver for Matematikk 2P</strong>, tilpasset kompetansemål fra Udir.</p></div>
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Sokratisk veiledning.</strong> AI-mentoren gir aldri svaret direkte. Eleven lærer å tenke, ikke kopiere.</p></div>
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Ingen spillifisering.</strong> Ingen poeng, streaks eller manipulerende design. Bygget med respekt for elevens verdighet.</p></div>
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Fremgangsanalyse.</strong> Se mestring på tvers av emner og spor forbedring over tid.</p></div>
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Supplement, ikke erstatning.</strong> Logicmath erstatter ikke deg. Den gir elevene tilpasset øving mellom timene dine.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <CTABanner headline="Gi elevene dine tilpasset matteøving uten ekstra arbeid for deg." ctaText="Last ned Logicmath" ctaHref="/last-ned" variant="accent" />
+  </main>
+  <Footer />
+</BaseLayout>

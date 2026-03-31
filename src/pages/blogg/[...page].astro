@@ -1,0 +1,172 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import Pagination from '../../components/Pagination.astro';
+import Footer from '../../components/Footer.astro';
+import { getLocaleFromUrl, t } from '../../i18n/translations';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await getCollection('blog', ({ data }) =>
+    import.meta.env.PROD ? !data.draft : true
+  );
+  posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  return paginate(posts, { pageSize: 9 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const locale = getLocaleFromUrl(Astro.url);
+const allPosts = page.data;
+const featuredPosts = page.currentPage === 1
+  ? allPosts.filter((p) => p.data.featured)
+  : [];
+const regularPosts = page.currentPage === 1
+  ? allPosts.filter((p) => !p.data.featured)
+  : allPosts;
+
+const allTags = [...new Set(page.data.flatMap((p) => p.data.tags))].sort();
+---
+
+<BaseLayout
+  title={`${t(locale, 'blog.heading')}${page.currentPage > 1 ? ` — Side ${page.currentPage}` : ''} | Logicmath`}
+  description={t(locale, 'blog.description')}
+>
+  <Header />
+
+  <main id="main-content">
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="font-heading text-4xl font-bold text-primary-900 dark:text-white md:text-5xl">{t(locale, 'blog.heading')}</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-primary-600 dark:text-primary-400">
+          {t(locale, 'blog.description')}
+        </p>
+      </div>
+    </section>
+
+    {featuredPosts.length > 0 && (
+      <section class="border-b border-primary-200 px-4 py-12 dark:border-primary-700 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl">
+          <h2 class="mb-6 font-heading text-xl font-semibold text-primary-900 dark:text-white">{t(locale, 'articles.featured')}</h2>
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {featuredPosts.map((post) => (
+              <BlogCard
+                title={post.data.title}
+                description={post.data.description}
+                date={post.data.date}
+                href={`/blogg/${post.id}`}
+                category={post.data.category}
+                image={post.data.image}
+                imageAlt={post.data.image_alt}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {page.currentPage === 1 && allTags.length > 0 && (
+      <section class="px-4 pt-12 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-6xl">
+          <div class="flex flex-wrap justify-center gap-2" role="tablist" aria-label="Filtrer innlegg etter emne">
+            <button
+              type="button"
+              class="tag-btn rounded-full bg-accent-500 px-5 py-2 text-sm font-medium text-white transition-colors"
+              data-tag="all"
+              role="tab"
+              aria-selected="true"
+            >
+              {t(locale, 'articles.all')}
+            </button>
+            {allTags.map((tag) => (
+              <button
+                type="button"
+                class="tag-btn rounded-full bg-primary-100 px-5 py-2 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-200 dark:bg-primary-800 dark:text-primary-300 dark:hover:bg-primary-700"
+                data-tag={tag}
+                role="tab"
+                aria-selected="false"
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <section class="px-4 py-12 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        {regularPosts.length > 0 ? (
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3" id="blog-grid">
+            {regularPosts.map((post) => (
+              <div class="blog-item" data-tags={JSON.stringify(post.data.tags)}>
+                <BlogCard
+                  title={post.data.title}
+                  description={post.data.description}
+                  date={post.data.date}
+                  href={`/blogg/${post.id}`}
+                  category={post.data.category}
+                  image={post.data.image}
+                  imageAlt={post.data.image_alt}
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p class="py-12 text-center text-lg text-primary-500 dark:text-primary-400">
+            Ingen innlegg ennå. Kom tilbake snart!
+          </p>
+        )}
+
+        <p class="mt-8 hidden text-center text-primary-500 dark:text-primary-400" id="no-posts">
+          {t(locale, 'blog.noResults')}
+        </p>
+
+        <Pagination
+          currentPage={page.currentPage}
+          totalPages={page.lastPage}
+          baseUrl="/blogg"
+        />
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  function initTagFilter(): void {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.tag-btn');
+    const items = document.querySelectorAll<HTMLElement>('.blog-item');
+    const noPostsEl = document.getElementById('no-posts');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const tag = btn.dataset.tag;
+
+        buttons.forEach((b) => {
+          b.classList.remove('bg-accent-500', 'text-white');
+          b.classList.add('bg-primary-100', 'text-primary-700');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.remove('bg-primary-100', 'text-primary-700');
+        btn.classList.add('bg-accent-500', 'text-white');
+        btn.setAttribute('aria-selected', 'true');
+
+        let visible = 0;
+        items.forEach((item) => {
+          const tags: string[] = JSON.parse(item.dataset.tags || '[]');
+          const show = tag === 'all' || tags.includes(tag!);
+          item.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+
+        if (noPostsEl) noPostsEl.classList.toggle('hidden', visible > 0);
+      });
+    });
+  }
+
+  initTagFilter();
+  document.addEventListener('astro:after-swap', initTagFilter);
+</script>

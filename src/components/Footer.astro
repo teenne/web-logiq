@@ -1,14 +1,16 @@
 ---
+import { getLocaleFromUrl, t, localePath } from '../i18n/translations';
+const locale = getLocaleFromUrl(Astro.url);
 const currentYear = new Date().getFullYear();
 interface FooterLink { label: string; href: string; }
 const produktLinks: FooterLink[] = [
-  { label: 'Slik fungerer det', href: '/hvordan-det-fungerer' },
-  { label: 'Last ned', href: '/last-ned' },
-  { label: 'Blogg', href: '/blogg' },
+  { label: t(locale, 'nav.howItWorks'), href: localePath(locale, '/hvordan-det-fungerer') },
+  { label: t(locale, 'cta.download').replace('Logicmath', '').trim() || 'Last ned', href: localePath(locale, '/last-ned') },
+  { label: t(locale, 'nav.blog'), href: localePath(locale, '/blogg') },
 ];
 const juridiskLinks: FooterLink[] = [
-  { label: 'Personvern', href: '/personvern' },
-  { label: 'Vilkar', href: '/vilkaar' },
+  { label: t(locale, 'footer.privacy'), href: localePath(locale, '/personvern') },
+  { label: t(locale, 'footer.terms'), href: localePath(locale, '/vilkaar') },
 ];
 ---
 <footer class="bg-primary-950 text-white" role="contentinfo">
@@ -16,19 +18,19 @@ const juridiskLinks: FooterLink[] = [
     <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
       <div>
         <h2 class="font-heading text-xl font-bold">Logicmath</h2>
-        <p class="mt-3 text-sm leading-relaxed text-primary-300">Alle elever kan lykkes i matte nar laering tilpasser seg dem, ikke omvendt.</p>
+        <p class="mt-3 text-sm leading-relaxed text-primary-300">{t(locale, 'footer.tagline')}</p>
       </div>
       <div>
-        <h3 class="font-heading text-sm font-semibold uppercase tracking-wider text-primary-300">Produkt</h3>
+        <h3 class="font-heading text-sm font-semibold uppercase tracking-wider text-primary-300">{t(locale, 'footer.product')}</h3>
         <ul class="mt-4 space-y-2" role="list">{produktLinks.map((link) => (<li><a href={link.href} class="text-sm text-primary-400 transition-colors hover:text-white">{link.label}</a></li>))}</ul>
       </div>
       <div>
-        <h3 class="font-heading text-sm font-semibold uppercase tracking-wider text-primary-300">Juridisk</h3>
+        <h3 class="font-heading text-sm font-semibold uppercase tracking-wider text-primary-300">{t(locale, 'footer.legal')}</h3>
         <ul class="mt-4 space-y-2" role="list">{juridiskLinks.map((link) => (<li><a href={link.href} class="text-sm text-primary-400 transition-colors hover:text-white">{link.label}</a></li>))}</ul>
       </div>
     </div>
     <div class="mt-12 border-t border-primary-800 pt-8">
-      <p class="text-center text-sm text-primary-500">&copy; {currentYear} Halisonworks AS. Alle rettigheter reservert.</p>
+      <p class="text-center text-sm text-primary-500">{t(locale, 'footer.copyright', { year: String(currentYear) })}</p>
     </div>
   </div>
 </footer>

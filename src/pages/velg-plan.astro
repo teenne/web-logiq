@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const fagNavn: Record<string, string> = {
+  'matte-1-4': 'Matematikk 1.-4. trinn',
+  'matte-5-7': 'Matematikk 5.-7. trinn',
+  'matte-8': 'Matematikk 8. trinn',
+  'matte-9': 'Matematikk 9. trinn',
+  'matte-10': 'Matematikk 10. trinn',
+  '1p': 'Matematikk 1P',
+  '1t': 'Matematikk 1T',
+  '2p': 'Matematikk 2P',
+  's1': 'Matematikk S1',
+  's2': 'Matematikk S2',
+  'r1': 'Matematikk R1',
+  'r2': 'Matematikk R2',
+};
+---
+<BaseLayout title="Velg plan | Logicmath" description="Velg abonnementet som passer deg. Gratis diagnostikk, månedsplan eller årsplan.">
+  <Header />
+  <main id="main-content">
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <div class="text-center">
+          <h1 id="pricing-heading" class="font-heading text-4xl font-bold text-primary-900 dark:text-white md:text-5xl">Velg din plan</h1>
+          <p id="pricing-subject" class="mx-auto mt-4 max-w-2xl text-lg text-primary-600 dark:text-primary-400"></p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 items-start gap-8 md:grid-cols-3">
+          <!-- Gratis -->
+          <div class="rounded-xl border border-primary-200 p-8 dark:border-primary-700">
+            <h3 class="font-heading text-xl font-bold text-primary-900 dark:text-white">Gratis</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Prøv diagnostikken og se hvor du står. Ingen forpliktelse.</p>
+            <div class="mt-6">
+              <span class="text-4xl font-bold text-primary-900 dark:text-white">0 kr</span>
+            </div>
+            <ul class="mt-8 space-y-3">
+              <li class="flex items-start gap-2 text-sm text-primary-700 dark:text-primary-300"><svg class="mt-0.5 h-5 w-5 shrink-0 text-green-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Diagnostikk for 1 emne</span></li>
+              <li class="flex items-start gap-2 text-sm text-primary-700 dark:text-primary-300"><svg class="mt-0.5 h-5 w-5 shrink-0 text-green-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Se dine kunnskapshull</span></li>
+              <li class="flex items-start gap-2 text-sm text-primary-700 dark:text-primary-300"><svg class="mt-0.5 h-5 w-5 shrink-0 text-green-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>5 øvingsoppgaver</span></li>
+            </ul>
+            <button type="button" class="pricing-cta mt-8 block w-full rounded-lg border border-primary-300 py-3 text-center font-semibold text-primary-800 transition-colors hover:border-primary-400 hover:bg-primary-50 dark:border-primary-600 dark:text-primary-200 dark:hover:border-primary-500 dark:hover:bg-primary-800" data-tier="gratis" data-price="0">Kom i gang gratis</button>
+          </div>
+
+          <!-- Måned -->
+          <div class="relative rounded-xl border-2 border-accent-500 p-8 shadow-lg">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-500 px-4 py-1 text-xs font-semibold text-white">Mest populær</span>
+            <h3 class="font-heading text-xl font-bold text-primary-900 dark:text-white">Månedsplan</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Full tilgang til alle emner, AI-mentor og fremgangsanalyse.</p>
+            <div class="mt-6">
+              <span class="text-4xl font-bold text-primary-900 dark:text-white">99 kr</span>
+              <span class="text-base text-primary-500 dark:text-primary-400">/mnd</span>
+            </div>
+            <ul class="mt-8 space-y-3">
+              <li class="flex items-start gap-2 text-sm text-primary-700 dark:text-primary-300"><svg class="mt-0.5 h-5 w-5 shrink-0 text-green-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Diagnostikk for alle emner</span></li>
+              <li class="flex items-start gap-2 text-sm text-primary-700 dark:text-primary-300"><svg class="mt-0.5 h-5 w-5 shrink-0 text-green-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>543+ oppgaver</span></li>
+              <li class="flex items-start gap-2 text-sm text-primary-700 dark:text-primary-300"><svg class="mt-0.5 h-5 w-5 shrink-0 text-green-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>AI-mentor med sokratisk metode</span></li>
+              <li class="flex items-start gap-2 text-sm text-primary-700 dark:text-primary-300"><svg class="mt-0.5 h-5 w-5 shrink-0 text-green-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Fremgangsanalyse</span></li>
+              <li class="flex items-start gap-2 text-sm text-primary-700 dark:text-primary-300"><svg class="mt-0.5 h-5 w-5 shrink-0 text-green-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Avbryt når som helst</span></li>
+            </ul>
+            <button type="button" class="pricing-cta mt-8 block w-full rounded-lg bg-accent-500 py-3 text-center font-semibold text-white transition-colors hover:bg-accent-600" data-tier="maaned" data-price="99">Velg månedsplan</button>
+          </div>
+
+          <!-- År -->
+          <div class="rounded-xl border border-primary-200 p-8 dark:border-primary-700">
+            <h3 class="font-heading text-xl font-bold text-primary-900 dark:text-white">Årsplan</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Spar 25%. Perfekt for et helt skoleår med matte.</p>
+            <div class="mt-6">
+              <span class="text-4xl font-bold text-primary-900 dark:text-white">890 kr</span>
+              <span class="text-base text-primary-500 dark:text-primary-400">/år</span>
+            </div>
+            <p class="mt-1 text-xs text-accent-600 font-medium">74 kr/mnd. Spar 298 kr</p>
+            <ul class="mt-8 space-y-3">
+              <li class="flex items-start gap-2 text-sm text-primary-700 dark:text-primary-300"><svg class="mt-0.5 h-5 w-5 shrink-0 text-green-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Alt i månedsplanen</span></li>
+              <li class="flex items-start gap-2 text-sm text-primary-700 dark:text-primary-300"><svg class="mt-0.5 h-5 w-5 shrink-0 text-green-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Prioritert tilgang til nye fag</span></li>
+              <li class="flex items-start gap-2 text-sm text-primary-700 dark:text-primary-300"><svg class="mt-0.5 h-5 w-5 shrink-0 text-green-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Eksamensforberedelsesmodus</span></li>
+            </ul>
+            <button type="button" class="pricing-cta mt-8 block w-full rounded-lg border border-primary-300 py-3 text-center font-semibold text-primary-800 transition-colors hover:border-primary-400 hover:bg-primary-50 dark:border-primary-600 dark:text-primary-200 dark:hover:border-primary-500 dark:hover:bg-primary-800" data-tier="aar" data-price="890">Velg årsplan</button>
+          </div>
+        </div>
+
+        <p class="mt-8 text-center text-sm text-primary-500 dark:text-primary-400">Alle planer inkluderer 7 dagers gratis prøveperiode. Ingen binding.</p>
+      </div>
+    </section>
+
+    <!-- Painted door overlay (hidden by default) -->
+    <div id="painted-door-overlay" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4" role="dialog" aria-modal="true" aria-labelledby="pd-heading">
+      <div class="mx-auto w-full max-w-md rounded-2xl bg-white p-8 shadow-2xl dark:bg-primary-900">
+        <div class="text-center">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent-100 dark:bg-accent-900/30">
+            <svg class="h-8 w-8 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <h2 id="pd-heading" class="mt-4 font-heading text-2xl font-bold text-primary-900 dark:text-white">Vi er nesten klare!</h2>
+          <p id="pd-message" class="mt-2 text-primary-600 dark:text-primary-400"></p>
+        </div>
+        <form id="pd-form" class="mt-6 space-y-4">
+          <input type="hidden" id="pd-tier" name="tier" value="" />
+          <input type="hidden" id="pd-price" name="price" value="" />
+          <input type="hidden" id="pd-subject" name="subject" value="" />
+          <div>
+            <label for="pd-email" class="mb-1 block text-sm font-medium text-primary-700 dark:text-primary-300">E-post</label>
+            <input type="email" id="pd-email" name="email" required placeholder="deg@eksempel.no" class="w-full rounded-lg border border-primary-300 bg-white px-4 py-3 text-primary-900 focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 dark:border-primary-600 dark:bg-primary-800 dark:text-white" />
+          </div>
+          <button type="submit" class="w-full rounded-lg bg-accent-500 py-3 font-semibold text-white transition-colors hover:bg-accent-600">Sett meg på ventelisten</button>
+        </form>
+        <div id="pd-success" class="mt-4 hidden text-center">
+          <p class="text-sm font-medium text-green-600">Du er på ventelisten!</p>
+          <p class="mt-1 text-xs text-primary-500">Vi sender deg en e-post så snart dette faget er klart.</p>
+        </div>
+        <button id="pd-close" type="button" class="mt-4 block w-full text-center text-sm text-primary-500 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-200">Lukk</button>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script define:vars={{ fagNavn }}>
+  window.__fagNavn = fagNavn;
+</script>
+
+<script>
+  declare global {
+    interface Window {
+      __fagNavn: Record<string, string>;
+      posthog?: { capture: (event: string, props?: Record<string, unknown>) => void };
+    }
+  }
+
+  function initPricing(): void {
+    const params = new URLSearchParams(window.location.search);
+    const fag = params.get('fag') || '2p';
+    const fagNavn = window.__fagNavn;
+    const subjectName = fagNavn[fag] || fag;
+
+    const subjectEl = document.getElementById('pricing-subject');
+    if (subjectEl) {
+      subjectEl.textContent = `Tilpasset øving for ${subjectName}. Velg planen som passer deg.`;
+    }
+
+    const overlay = document.getElementById('painted-door-overlay');
+    const pdMessage = document.getElementById('pd-message');
+    const pdForm = document.getElementById('pd-form') as HTMLFormElement;
+    const pdSuccess = document.getElementById('pd-success');
+    const pdClose = document.getElementById('pd-close');
+
+    if (!overlay || !pdMessage || !pdForm || !pdSuccess || !pdClose) return;
+
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.pricing-cta');
+
+    let selectedTier = '';
+    let selectedPrice = '';
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        selectedTier = btn.dataset.tier || '';
+        selectedPrice = btn.dataset.price || '';
+
+        // Track the pricing click (willingness to pay signal)
+        if (window.posthog) {
+          window.posthog.capture('pricing_click', {
+            subject: fag,
+            subject_name: subjectName,
+            tier: selectedTier,
+            price_nok: Number(selectedPrice),
+          });
+        }
+
+        // Set hidden form fields
+        const tierInput = document.getElementById('pd-tier') as HTMLInputElement;
+        const priceInput = document.getElementById('pd-price') as HTMLInputElement;
+        const subjectInput = document.getElementById('pd-subject') as HTMLInputElement;
+        if (tierInput) tierInput.value = selectedTier;
+        if (priceInput) priceInput.value = selectedPrice;
+        if (subjectInput) subjectInput.value = fag;
+
+        // Show painted door overlay
+        const tierLabel = selectedTier === 'gratis' ? 'gratisplanen' : selectedTier === 'maaned' ? 'månedsplanen' : 'årsplanen';
+        pdMessage.textContent = `${subjectName} er snart klar. Sett deg på ventelisten for ${tierLabel}, så gir vi deg beskjed med en gang.`;
+        overlay.classList.remove('hidden');
+        overlay.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+
+        // Reset form state in case of re-open
+        pdForm.classList.remove('hidden');
+        pdSuccess!.classList.add('hidden');
+
+        const emailInput = document.getElementById('pd-email') as HTMLInputElement;
+        if (emailInput) { emailInput.value = ''; emailInput.focus(); }
+      });
+    });
+
+    pdForm.addEventListener('submit', (e: Event) => {
+      e.preventDefault();
+      const emailInput = document.getElementById('pd-email') as HTMLInputElement;
+      const email = emailInput?.value.trim();
+      if (!email) return;
+
+      // Track waitlist signup with full context
+      if (window.posthog) {
+        window.posthog.capture('waitlist_signup', {
+          subject: fag,
+          subject_name: subjectName,
+          email: email,
+          tier: selectedTier,
+          price_nok: Number(selectedPrice),
+        });
+      }
+
+      pdForm.classList.add('hidden');
+      pdSuccess!.classList.remove('hidden');
+    });
+
+    pdClose.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+      overlay.classList.remove('flex');
+      document.body.style.overflow = '';
+    });
+
+    overlay.addEventListener('click', (e: Event) => {
+      if (e.target === overlay) {
+        overlay.classList.add('hidden');
+        overlay.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
+        overlay.classList.add('hidden');
+        overlay.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  initPricing();
+  document.addEventListener('astro:after-swap', initPricing);
+</script>

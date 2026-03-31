@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Footer from '../components/Footer.astro';
+---
+<BaseLayout title="For elever | Logicmath" description="Sliter du med matte? Logicmath finner hullene dine, bygger en personlig øvingsplan og gir deg en AI-mentor som hjelper deg forstå, ikke bare kopiere svaret.">
+  <Header />
+  <main id="main-content">
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="font-heading text-4xl font-bold text-primary-900 dark:text-white md:text-5xl">Du er ikke dårlig i matte. Du har bare hull ingen har funnet.</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-primary-600 dark:text-primary-400">Logicmath finner nøyaktig hvor du sliter, gir deg oppgaver på ditt nivå og en AI-mentor som veileder deg videre når du står fast.</p>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Kjenner du deg igjen?</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2">
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Du skjønner det i timen, men ikke på prøven</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Det føles som du forstår når læreren forklarer, men når du sitter alene foran oppgaven forsvinner alt. Det er fordi du har hull i grunnlaget som gjør nye emner uforståelige.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Du vet ikke hva du ikke kan</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Det er vanskelig å øve når du ikke vet hva som mangler. Du gjør oppgaver tilfeldig og håper noe fester seg. Logicmath kartlegger nøyaktig hvor hullene er.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Du gir opp når du står fast</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Uten hjelp tilgjengelig er det lett å gi opp. AI-mentoren i Logicmath stiller ledende spørsmål som hjelper deg tenke videre, uten å gi svaret direkte.</p>
+          </div>
+          <div class="rounded-xl border border-primary-200 p-6 dark:border-primary-700">
+            <h3 class="font-heading text-lg font-semibold text-primary-900 dark:text-white">Oppgavene i boka passer ikke</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Enten for lette eller for vanskelige. Logicmath tilpasser seg ditt nivå og gir deg oppgaver som utfordrer akkurat nok til at du lærer, uten å bli frustrert.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-primary-50 px-4 py-16 dark:bg-primary-900/20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Slik hjelper Logicmath deg</h2>
+        <div class="mt-8 grid gap-8 md:grid-cols-3">
+          <div class="text-center">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">1</div>
+            <h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Ta diagnostikken</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">7 spørsmål per emne avslører nøyaktig hva du kan og hva du trenger å jobbe med. Tar under 5 minutter.</p>
+          </div>
+          <div class="text-center">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">2</div>
+            <h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Øv på ditt nivå</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Appen bygger en personlig læringsøkt med oppvarming, teori, veiledet øving og repetisjon. Alt tilpasset deg.</p>
+          </div>
+          <div class="text-center">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-700 text-white font-heading font-bold text-lg">3</div>
+            <h3 class="mt-4 font-heading text-lg font-semibold text-primary-900 dark:text-white">Spør AI-mentoren</h3>
+            <p class="mt-2 text-sm text-primary-600 dark:text-primary-400">Når du står fast, stiller mentoren spørsmål som hjelper deg finne svaret selv. Du lærer å tenke matematisk, ikke bare kopiere.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="font-heading text-2xl font-bold text-primary-900 dark:text-white">Hva gjør Logicmath annerledes?</h2>
+        <div class="mt-8 space-y-4 text-primary-600 dark:text-primary-400">
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Ingen gjetting.</strong> Diagnostikken viser nøyaktig hvor du er, ikke hvor noen antar du burde være.</p></div>
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Ingen poeng eller streaks.</strong> Vi behandler deg som en voksen. Ingen spillifisering, ingen manipulasjon.</p></div>
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Norsk læreplan.</strong> 543+ oppgaver tilpasset Matematikk 2P kompetansemål fra Udir.</p></div>
+          <div class="flex items-start gap-3"><span class="mt-1 shrink-0 text-accent-500 font-bold">&#10003;</span><p><strong>Billigere enn privatlærer.</strong> AI-mentoren er tilgjengelig når som helst, så lenge du trenger.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <CTABanner headline="Finn ut hvor du faktisk står i matte. Gratis diagnostikk for første emne." ctaText="Last ned Logicmath" ctaHref="/last-ned" variant="accent" />
+  </main>
+  <Footer />
+</BaseLayout>

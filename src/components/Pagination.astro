@@ -1,4 +1,7 @@
 ---
+import { getLocaleFromUrl, t } from '../i18n/translations';
+const locale = getLocaleFromUrl(Astro.url);
+
 interface Props {
   currentPage: number;
   totalPages: number;
@@ -40,14 +43,14 @@ const visiblePages = getVisiblePages(currentPage, totalPages);
 
 <nav
   class="mt-12 flex items-center justify-center gap-1"
-  aria-label="Pagination"
+  aria-label={t(locale, 'ui.pagination')}
 >
   <!-- Previous -->
   {currentPage > 1 ? (
     <a
       href={getPageUrl(currentPage - 1)}
       class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary-200 text-primary-700 transition-colors hover:bg-primary-50"
-      aria-label="Previous page"
+      aria-label={t(locale, 'ui.previousPage')}
     >
       <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -57,7 +60,7 @@ const visiblePages = getVisiblePages(currentPage, totalPages);
     <span
       class="inline-flex h-10 w-10 cursor-not-allowed items-center justify-center rounded-lg border border-primary-100 text-primary-300"
       aria-disabled="true"
-      aria-label="Previous page"
+      aria-label={t(locale, 'ui.previousPage')}
     >
       <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -75,7 +78,7 @@ const visiblePages = getVisiblePages(currentPage, totalPages);
       <span
         class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent-500 text-sm font-medium text-white"
         aria-current="page"
-        aria-label={`Page ${page}`}
+        aria-label={t(locale, 'ui.page', { n: String(page) })}
       >
         {page}
       </span>
@@ -83,7 +86,7 @@ const visiblePages = getVisiblePages(currentPage, totalPages);
       <a
         href={getPageUrl(page as number)}
         class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary-200 text-sm text-primary-700 transition-colors hover:bg-primary-50"
-        aria-label={`Page ${page}`}
+        aria-label={t(locale, 'ui.page', { n: String(page) })}
       >
         {page}
       </a>
@@ -95,7 +98,7 @@ const visiblePages = getVisiblePages(currentPage, totalPages);
     <a
       href={getPageUrl(currentPage + 1)}
       class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary-200 text-primary-700 transition-colors hover:bg-primary-50"
-      aria-label="Next page"
+      aria-label={t(locale, 'ui.nextPage')}
     >
       <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -105,7 +108,7 @@ const visiblePages = getVisiblePages(currentPage, totalPages);
     <span
       class="inline-flex h-10 w-10 cursor-not-allowed items-center justify-center rounded-lg border border-primary-100 text-primary-300"
       aria-disabled="true"
-      aria-label="Next page"
+      aria-label={t(locale, 'ui.nextPage')}
     >
       <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

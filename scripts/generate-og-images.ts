@@ -17,27 +17,18 @@ interface OgPage {
 }
 
 const pages: OgPage[] = [
-  {
-    slug: "home",
-    title: "Welcome to Our Website",
-    description: "Discover what we have to offer.",
-    template: "default",
-  },
-  {
-    slug: "about",
-    title: "About Us",
-    description: "Learn more about our story, mission, and team.",
-    template: "default",
-  },
-  {
-    slug: "contact",
-    title: "Get in Touch",
-    description: "We would love to hear from you. Reach out today.",
-    template: "default",
-  },
+  { slug: "home", title: "Logicmath", description: "Du er ikke dårlig i matte. Du har hull.", template: "default" },
+  { slug: "about", title: "Om Logicmath", description: "Alle elever kan lykkes i matte når læring tilpasser seg dem.", template: "default" },
+  { slug: "for-elever", title: "For elever", description: "Finn hullene dine, få tilpasset øving og en AI-mentor som hjelper deg forstå.", template: "default" },
+  { slug: "for-foreldre", title: "For foreldre", description: "Barnet ditt er ikke dårlig i matte. Det har hull ingen har funnet.", template: "default" },
+  { slug: "for-laerere", title: "For lærere", description: "Gi hver elev øving tilpasset deres nivå, uten ekstra arbeid.", template: "default" },
+  { slug: "hvordan-det-fungerer", title: "Slik fungerer det", description: "Diagnostikk, tilpasset øving og AI-veiledning.", template: "default" },
+  { slug: "ressurser", title: "Ressurser", description: "Forskning, studieteknikker og fagguider for å mestre matte.", template: "default" },
+  { slug: "velg-plan", title: "Velg plan", description: "Gratis diagnostikk, månedsplan eller årsplan.", template: "default" },
+  { slug: "kontakt", title: "Kontakt oss", description: "Har du spørsmål om Logicmath? Send oss en melding.", template: "default" },
 ];
 
-const BRAND_NAME = "Brand";
+const BRAND_NAME = "Logicmath";
 const WIDTH = 1200;
 const HEIGHT = 630;
 const OUTPUT_DIR = resolve("public/og");

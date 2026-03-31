@@ -2,13 +2,17 @@
 import '../styles/global.css';
 import CookieBanner from '../components/CookieBanner.astro';
 import PostHog from '../components/PostHog.astro';
+import { getLocaleFromUrl, t } from '../i18n/translations';
+const locale = getLocaleFromUrl(Astro.url);
 interface Props { title: string; description?: string; ogImage?: string; ogType?: 'website' | 'article'; datePublished?: string; jsonLd?: object; keywords?: string[]; noindex?: boolean; }
-const { title, description = 'Finn ut noyaktig hvor du star i Matematikk 2P. AI-veiledet oving tilpasset ditt niva. 543+ oppgaver bygget for norsk laereplan.', ogImage = '', ogType = 'website', datePublished, jsonLd, keywords, noindex = false } = Astro.props;
+const { title, description = 'Finn ut nøyaktig hvor du står i Matematikk 2P. AI-veiledet øving tilpasset ditt nivå. 543+ oppgaver bygget for norsk læreplan.', ogImage: ogImageProp, ogType = 'website', datePublished, jsonLd, keywords, noindex = false } = Astro.props;
+const pathSlug = Astro.url.pathname.replace(/^\/|\/$/g, '').split('/')[0] || 'home';
+const ogImage = ogImageProp || `/og/${pathSlug}.png`;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const organizationJsonLd = { '@context': 'https://schema.org', '@type': 'Organization', name: 'Logicmath', url: Astro.site?.href ?? 'https://logiq.halisonworks.com', address: { '@type': 'PostalAddress', addressCountry: 'NO' }, email: 'hello@halisonworks.com' };
 ---
 <!doctype html>
-<html lang="nb">
+<html lang={locale}>
   <head>
     <script is:inline>(function(){const t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark');})();</script>
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content={Astro.generator} />
@@ -17,7 +21,7 @@ const organizationJsonLd = { '@context': 'https://schema.org', '@type': 'Organiz
     {keywords && keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" /><link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" /><link rel="icon" type="image/x-icon" href="/favicon.ico" /><link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
     <meta property="og:type" content={ogType} /><meta property="og:url" content={canonicalUrl} /><meta property="og:title" content={title} /><meta property="og:locale" content="nb_NO" />
@@ -29,10 +33,10 @@ const organizationJsonLd = { '@context': 'https://schema.org', '@type': 'Organiz
     <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
     {import.meta.env.PUBLIC_POSTHOG_KEY && (<script is:inline define:vars={{ phKey: import.meta.env.PUBLIC_POSTHOG_KEY }}>window.__POSTHOG_KEY = phKey;</script>)}
-    <PostHog />
+    <PostHog entity="Halisonworks" />
   </head>
   <body class="min-h-screen bg-white dark:bg-dark-bg">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent-500 focus:px-4 focus:py-2 focus:text-white focus:outline-none">Hopp til hovedinnhold</a>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent-500 focus:px-4 focus:py-2 focus:text-white focus:outline-none">{t(locale, 'ui.skipToContent')}</a>
     <slot />
     <CookieBanner />
   </body>
