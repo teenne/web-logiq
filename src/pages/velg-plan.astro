@@ -116,14 +116,16 @@ const fagNavn: Record<string, string> = {
   <Footer />
 </BaseLayout>
 
-<script define:vars={{ fagNavn }}>
+<script define:vars={{ fagNavn, w3fKey: import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '' }}>
   window.__fagNavn = fagNavn;
+  window.__w3fKey = w3fKey;
 </script>
 
 <script>
   declare global {
     interface Window {
       __fagNavn: Record<string, string>;
+      __w3fKey: string;
       posthog?: { capture: (event: string, props?: Record<string, unknown>) => void };
     }
   }
@@ -206,7 +208,7 @@ const fagNavn: Record<string, string> = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            access_key: '7b32eb95-b175-4963-ad8d-710043808679',
+            access_key: window.__w3fKey,
             subject: `Logicmath venteliste: ${subjectName} (${selectedTier})`,
             email: email,
             fag: fag,
